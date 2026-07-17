@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRMSS | Subha Rashmi Mahila Seva Samiti</title>
-    <meta name="description" content="Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization established in 2007 in Odisha, dedicated to sustainable development, coastal conservation, and women empowerment.">
+    <meta name="description" content="Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization established in 2007 in Odisha, dedicated to participatory development, coastal conservation, and women empowerment.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,16 +29,16 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 90px; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; overflow-x: hidden; }
+        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 95px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.65; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary-blue); line-height: 1.25; }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
         .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
 
         /* Global Badges & Buttons */
-        .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1.1rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1rem; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.8rem; border-radius: 50px; font-weight: 600; transition: var(--transition); cursor: pointer; border: none; gap: 0.6rem; font-size: 0.95rem; }
+        .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; transition: var(--transition); cursor: pointer; border: none; gap: 0.6rem; font-size: 0.95rem; }
         .btn-primary { background: var(--accent-green); color: var(--white); box-shadow: 0 4px 12px rgba(16, 124, 65, 0.3); }
         .btn-primary:hover { background: #0c6333; transform: translateY(-2px); color: var(--white); box-shadow: 0 6px 16px rgba(16, 124, 65, 0.4); }
         .btn-secondary { background: var(--primary-blue); color: var(--white); }
@@ -47,9 +47,11 @@
         .btn-outline:hover { background: var(--white); color: var(--primary-blue); transform: translateY(-2px); }
 
         /* Top Announcement Bar */
-        .top-bar { background: #05192d; color: #cbd5e1; font-size: 0.82rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .top-bar { background: #05192d; color: #cbd5e1; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-        .top-bar span { display: inline-flex; align-items: center; gap: 0.4rem; }
+        .top-bar span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); transition: var(--transition); margin-left: 0.5rem; }
+        .social-icons a:hover { background: var(--accent-green); transform: translateY(-2px); }
 
         /* Fixed Header Navigation */
         header { position: sticky; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); z-index: 10000; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); }
@@ -150,7 +152,7 @@
         .cta-sec h2 { color: var(--white); font-size: 2.8rem; margin-bottom: 1rem; }
         .cta-sec p { color: #cbd5e1; max-width: 650px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
 
-        /* Footer */
+        /* Comprehensive Footer */
         footer { background: #05192d; color: var(--white); padding: 4.5rem 0 2rem; border-top: 4px solid var(--accent-green); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3.5rem; margin-bottom: 3.5rem; }
         .footer-about p { color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; max-width: 330px; line-height: 1.6; }
@@ -158,7 +160,7 @@
         .footer-links ul li { margin-bottom: 0.65rem; }
         .footer-links ul li a { color: #94a3b8; font-size: 0.9rem; }
         .footer-links ul li a:hover { color: var(--accent-green); padding-left: 5px; }
-        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 0.8rem; font-size: 0.9rem; align-items: flex-start; }
+        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem; align-items: flex-start; line-height: 1.5; }
         .footer-contact li i { color: var(--accent-green); margin-top: 4px; }
         .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
@@ -187,8 +189,14 @@
 
     <div class="top-bar">
         <div class="container">
-            <span><i class="fa-solid fa-building-shield" style="color: var(--accent-green);"></i> Registered under Societies Registration Act, 1860, Odisha</span>
-            <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> contact@srmss-odisha.org</span>
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <span><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> +91 8763457103</span>
+                <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> srmssodisha@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 
@@ -240,4 +248,348 @@
                 <div class="hero-card">
                     <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Emblem" onerror="this.src='https://via.placeholder.com/150/107c41/ffffff?text=SRMSS'">
                     <h3>Subha Rashmi Mahila Seva Samiti</h3>
-                    <p>Registered under Societies Registration Act, 1860, in Odisha, India.<
+                    <p>Registered under Societies Registration Act, 1860, in Odisha, India.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h4>17+</h4>
+                            <span>Years of Impact</span>
+                        </div>
+                        <div class="stat-item">
+                            <h4>6</h4>
+                            <span>Core Pillars</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="badge">Who We Are</span>
+                    <h2>Rooted in Grassroots Action & Participatory Development</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.25rem;">Subha Rashmi Mahila Seva Samiti (SRMSS) began in 2007 as a community-based initiative designed to respond directly to the unique socioeconomic and environmental challenges faced by women, children, traditional fishing households, and vulnerable rural groups.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem;">Over the years, our operational footprint has expanded across multiple districts of Odisha. Yet, our foundation remains unchanged: true sustainable development requires local communities to actively identify their priorities and take the lead in implementing solutions.</p>
+                    <a href="about.html" class="btn btn-secondary"><i class="fa-solid fa-building-ngo"></i> Read Our Full History</a>
+                </div>
+                <div class="about-box">
+                    <h3>Our Guiding Vision</h3>
+                    <p>"A just, inclusive, and resilient society where every person, especially women, children, and marginalized communities, has the opportunity to live with dignity, realize their potential, and contribute to sustainable and equitable development."</p>
+                    <div class="quote-box">
+                        <p><i class="fa-solid fa-quote-left" style="color: var(--accent-green); margin-right: 8px;"></i> Development is most effective when local communities are directly involved in identifying their priorities and taking part in the solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">What We Do</span>
+                <h2>Our Six Holistic Intervention Areas</h2>
+                <p>We implement comprehensive, community-led programmes across six foundational thematic pillars to foster economic resilience, protect marine biodiversity, and improve public health.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="pillar-card blue">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-fish-fins"></i></div>
+                        <h3>Sustainable Fisheries</h3>
+                        <p>Securing the livelihoods of coastal fishing communities while protecting marine ecosystems through responsible resource management.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Community-based fisheries management.</li>
+                            <li>Promotion of responsible fishing practices.</li>
+                            <li>Alternative livelihood support during seasonal fishing ban periods.</li>
+                            <li>Strengthening traditional fisher institutions.</li>
+                        </ul>
+                        <a href="work.html#fisheries" class="card-link">Explore Fisheries Work <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                        <h3>Women Empowerment</h3>
+                        <p>Placing women at the center of community progress through leadership development, micro-enterprises, and institutional strengthening.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Strengthening Self-Help Groups (SHGs).</li>
+                            <li>Vocational skill training & micro-enterprises.</li>
+                            <li>Financial & digital literacy initiatives.</li>
+                            <li>Promoting women leadership in local governance.</li>
+                        </ul>
+                        <a href="work.html#women" class="card-link">Explore Women Leadership <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pillar-card gold">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-crab"></i></div>
+                        <h3>Coastal Conservation</h3>
+                        <p>Protecting critical marine habitats and safeguarding endangered coastal species through scientific monitoring and local stewardship.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Conserving the endangered Indian horseshoe crab (<em>Tachypleus gigas</em>).</li>
+                            <li>Beach, estuary, & riverbank clean-up drives.</li>
+                            <li>Plastic waste reduction & source segregation.</li>
+                            <li>Citizen science & biodiversity mapping.</li>
+                        </ul>
+                        <a href="work.html#coastal" class="card-link">Explore Conservation Work <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-house-tsunami"></i></div>
+                        <h3>Disaster Preparedness</h3>
+                        <p>Empowering vulnerable coastal villages exposed to cyclones and floods to lead in local emergency preparedness and recovery.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Village Disaster Management Committees.</li>
+                            <li>Search, rescue, & emergency response training.</li>
+                            <li>Early warning dissemination systems.</li>
+                            <li>Post-disaster livelihood rehabilitation.</li>
+                        </ul>
+                        <a href="work.html#disaster" class="card-link">Explore Resilience Work <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pillar-card blue">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                        <h3>WASH Initiatives</h3>
+                        <p>Tackling coastal salinity intrusion and water contamination by developing climate-resilient drinking water and sanitation solutions.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Safe drinking water access in saline zones.</li>
+                            <li>Community sanitation infrastructure.</li>
+                            <li>Hygiene behaviour change communication.</li>
+                            <li>School menstrual hygiene management.</li>
+                        </ul>
+                        <a href="work.html#wash" class="card-link">Explore WASH Initiatives <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h3>Community Health</h3>
+                        <p>Bringing preventive healthcare, early disease screening, and nutrition education closer to underserved rural and coastal populations.</p>
+                    </div>
+                    <div class="pillar-body">
+                        <ul class="bullet-list">
+                            <li>Community health screening camps.</li>
+                            <li>Maternal, newborn, & child health education.</li>
+                            <li>Targeted anaemia prevention & nutrition.</li>
+                            <li>Referral networks & chronic disease awareness.</li>
+                        </ul>
+                        <a href="work.html#health" class="card-link">Explore Health Services <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding approach-sec">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">How We Work</span>
+                <h2>The 8-Step Participatory Approach</h2>
+                <p>Our systematic development engine ensures that every project begins with listening to community voices and concludes with long-term, self-sustained resilience.</p>
+            </div>
+            
+            <div class="grid-4">
+                <div class="step-card">
+                    <span class="step-num">Step 01</span>
+                    <div class="step-icon"><i class="fa-solid fa-ear-listen"></i></div>
+                    <h4>Listen</h4>
+                    <p>Community Needs & Consultation</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 02</span>
+                    <div class="step-icon"><i class="fa-solid fa-users"></i></div>
+                    <h4>Engage</h4>
+                    <p>Community Participation</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 03</span>
+                    <div class="step-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h4>Build</h4>
+                    <p>Capacity Building & Skills</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 04</span>
+                    <div class="step-icon"><i class="fa-solid fa-sitemap"></i></div>
+                    <h4>Organise</h4>
+                    <p>Strengthen Local Institutions</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 05</span>
+                    <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Connect</h4>
+                    <p>Strategic Partnerships</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 06</span>
+                    <div class="step-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h4>Act</h4>
+                    <p>Community-Led Implementation</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 07</span>
+                    <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Learn</h4>
+                    <p>Monitoring & Improvement</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">Step 08</span>
+                    <div class="step-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h4>Sustain</h4>
+                    <p>Resilient Communities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-banner">
+        <div class="container">
+            <span class="badge" style="background: rgba(255,255,255,0.15); color: var(--accent-gold); margin-bottom: 2rem;">Consolidated Outcomes</span>
+            <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 3.5rem;">Transforming Lives Across Odisha Since 2007</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>17+</h3>
+                    <p>Years of Grassroots Service</p>
+                </div>
+                <div class="impact-item">
+                    <h3>1,000+</h3>
+                    <p>SHGs & Institutions Strengthened</p>
+                </div>
+                <div class="impact-item">
+                    <h3>450M+</h3>
+                    <p>Year Living Fossil Protected (Crab)</p>
+                </div>
+                <div class="impact-item">
+                    <h3>6</h3>
+                    <p>Comprehensive Development Pillars</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <div class="loc-box">
+                    <span class="badge">Geographic Footprint</span>
+                    <h2>Where We Work</h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem; margin-bottom: 2rem;">SRMSS operates across several rural and coastal districts of Odisha, addressing unique environmental and social vulnerabilities with a strong community presence.</p>
+                    <ul class="loc-list">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Coastal Fishing Villages:</strong> Promoting participatory fisheries management and seasonal livelihood diversification.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Intertidal & Estuarine Habitats:</strong> Safeguarding critical spawning beaches for the endangered Indian horseshoe crab.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span><strong>Salinity-Prone Communities:</strong> Developing climate-resilient drinking water and sanitation infrastructure.</span>
+                        </li>
+                    </ul>
+                    <a href="where-we-work.html" class="btn btn-primary" style="margin-top: 1rem;"><i class="fa-solid fa-map-location-dot"></i> View Geographic Details</a>
+                </div>
+
+                <div>
+                    <span class="badge">Collaborative Network</span>
+                    <h2>Our Multi-Stakeholder Partnerships</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem; margin-bottom: 1.5rem;">We believe that lasting impact is achieved through collaboration. SRMSS works closely with women's groups, Panchayati Raj Institutions (PRIs), government health and fisheries departments, academic universities, and scientific researchers.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">By bridging the gap between grassroots community knowledge and institutional expertise, we ensure our initiatives are scientifically sound, policy-aligned, and deeply supported by the people they serve.</p>
+                    <a href="partners.html" class="btn btn-secondary"><i class="fa-solid fa-handshake"></i> Explore Our Partner Network</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-sec">
+        <div class="container">
+            <span class="badge" style="background: rgba(255,255,255,0.1); color: #4ade80;">Connect With Us</span>
+            <h2>Partner for Sustainable Development</h2>
+            <p>Whether you are an institutional donor, academic researcher, or community stakeholder, reach out to collaborate on grassroots development across Odisha.</p>
+            <a href="contact.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;"><i class="fa-solid fa-paper-plane"></i> Contact Our Team</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
+                    <p>Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook Page" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn Profile" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="where-we-work.html">Where We Work</a></li>
+                        <li><a href="partners.html">Our Partners</a></li>
+                        <li><a href="legal-status.html">Legal Status</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
+                        <li><a href="work.html#women">Women Empowerment</a></li>
+                        <li><a href="work.html#coastal">Horseshoe Crab Protection</a></li>
+                        <li><a href="work.html#disaster">Disaster Preparedness</a></li>
+                        <li><a href="work.html#wash">WASH Initiatives</a></li>
+                        <li><a href="work.html#health">Community Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact & Statutory</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
+                        <li><i class="fa-solid fa-file-shield"></i> <span>Societies Registration Act, 1860</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. All Rights Reserved.</p>
+                <p>Empowering Communities, Protecting Nature, Transforming Lives.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+            const icon = document.getElementById('mobileToggle').querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
