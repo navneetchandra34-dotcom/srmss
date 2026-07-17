@@ -9,66 +9,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-blue: #0b2c4d; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
-        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
-        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
-        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
-        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links li { position: relative; }
-        .nav-links a { font-weight: 600; font-size: 0.9rem; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
-        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
-        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
-        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
-        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
-        .pillar-sec { padding: 5rem 0; border-bottom: 1px solid #e2e8f0; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: flex-start; }
-        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
-        .list-check li { position: relative; padding-left: 1.5rem; margin-bottom: 0.7rem; font-size: 0.95rem; color: var(--text-muted); }
-        .list-check li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent-green); font-weight: 800; }
-        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
-        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+        :root{--primary-blue:#0b2c4d;--secondary-blue:#164273;--accent-green:#107c41;--emerald-light:#e6f4ed;--accent-gold:#f59e0b;--gold-light:#fef3c7;--text-dark:#1e293b;--text-muted:#64748b;--bg-light:#f8fafc;--white:#ffffff;--card-shadow:0 10px 25px -5px rgba(0,0,0,0.08);--transition:all 0.3s ease}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--bg-light);line-height:1.65;overflow-x:hidden}h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;color:var(--primary-blue);line-height:1.25}a{text-decoration:none;color:inherit;transition:var(--transition)}ul{list-style:none}.container{max-width:1240px;margin:0 auto;padding:0 2rem}.badge{display:inline-block;padding:.45rem 1.15rem;background:var(--emerald-light);color:var(--accent-green);border-radius:50px;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.85rem;border-radius:50px;font-weight:600;background:var(--accent-green);color:var(--white);gap:.6rem;border:none;cursor:pointer;transition:.3s}.btn:hover{background:#0c6333;transform:translateY(-2px);box-shadow:0 6px 16px rgba(16,124,65,.3)}.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4)}.btn-outline:hover{background:var(--white);color:var(--primary-blue)}.top-bar{background:#05192d;color:#cbd5e1;font-size:.85rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08)}.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.top-bar span{display:inline-flex;align-items:center;gap:.5rem}.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--white);margin-left:.5rem;transition:.3s}.social-icons a:hover{background:var(--accent-green);transform:translateY(-2px)}header{position:sticky;top:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);z-index:10000;box-shadow:0 4px 10px rgba(0,0,0,.05)}nav{display:flex;justify-content:space-between;align-items:center;height:85px}.logo-container{display:flex;align-items:center;gap:.8rem}.logo-img{width:50px;height:50px;border-radius:50%;object-fit:contain;background:var(--white)}.logo-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--primary-blue);line-height:1}.logo-subtitle{font-size:.65rem;color:var(--accent-green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:block;margin-top:4px}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links li{position:relative}.nav-links a{font-weight:600;font-size:.9rem}.nav-links a:hover,.nav-links a.active{color:var(--accent-green)}.dropdown-menu{position:absolute;top:100%;left:0;width:240px;background:var(--white);border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,.15);padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--transition);z-index:10001}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li a{padding:.6rem 1.2rem;display:block;font-size:.85rem;color:var(--text-muted)}.dropdown-menu li a:hover{background:var(--bg-light);color:var(--accent-green)}.mobile-toggle{display:none;font-size:1.5rem;cursor:pointer;color:var(--primary-blue)}.hero,.banner{background:linear-gradient(135deg,#0f335c,#05192d);color:var(--white);padding:6rem 0 4rem;text-align:center}.hero{min-height:85vh;padding:5rem 0;text-align:left;display:flex;align-items:center}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center}.hero h1,.banner h1{font-size:3.2rem;margin-bottom:1.2rem;line-height:1.15;color:#fff}.hero h1 span{color:#4ade80}.section-padding{padding:5rem 0; border-bottom:1px solid #e2e8f0}.section-header{text-align:center;max-width:800px;margin:0 auto 3rem}.section-header h2{font-size:2.5rem;margin-bottom:1rem}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}.card{background:var(--white);padding:2.5rem;border-radius:20px;box-shadow:var(--card-shadow);transition:.3s;border-top:4px solid var(--primary-blue)}.card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.1);border-top-color:var(--accent-green)}.list-check li { position: relative; padding-left: 1.5rem; margin-bottom: 0.7rem; font-size: 0.95rem; color: var(--text-muted); } .list-check li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent-green); font-weight: 800; } footer{background:#05192d;color:var(--white);padding:4.5rem 0 2rem;border-top:4px solid var(--accent-green)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3.5rem;margin-bottom:3.5rem}.footer-links h4{color:var(--white);font-size:1.1rem;margin-bottom:1.25rem}.footer-links ul li a{color:#94a3b8;font-size:.9rem;transition:.3s}.footer-links ul li a:hover{color:var(--accent-green)}.footer-contact li{display:flex;gap:.8rem;color:#94a3b8;margin-bottom:1rem;font-size:.9rem;line-height:1.5}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;text-align:center;color:#64748b;font-size:.85rem}@media (max-width:1024px){.grid-2,.grid-3,.grid-4,.hero-grid,.footer-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:2.8rem}}@media (max-width:768px){.grid-2,.grid-3,.grid-4,.hero-grid,.footer-grid{grid-template-columns:1fr}.nav-links{position:fixed;top:85px;left:-100%;width:100%;height:calc(100vh - 85px);background:var(--white);flex-direction:column;padding-top:2rem;transition:var(--transition);z-index:99999}.nav-links.active{left:0}.mobile-toggle{display:block}.dropdown-menu{position:static;box-shadow:none;display:none}.dropdown:hover .dropdown-menu{display:block}.hero{text-align:center;padding:3rem 0}.banner{padding:4rem 0 2rem}}
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="container">
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <span><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> +91 8763457103</span>
+                <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> srmssodisha@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
                 <a href="index.html" class="logo-container">
-                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
+                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50'">
                     <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown"><a href="work.html" class="active">Our Work ▾</a>
+                    <li class="dropdown"><a href="work.html" class="active">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#fisheries">Sustainable Fisheries</a></li>
-                            <li><a href="#women">Women Empowerment</a></li>
-                            <li><a href="#coastal">Coastal Conservation</a></li>
-                            <li><a href="#disaster">Disaster Preparedness</a></li>
-                            <li><a href="#wash">WASH Initiatives</a></li>
-                            <li><a href="#health">Community Health</a></li>
+                            <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
+                            <li><a href="work.html#women">Women Empowerment</a></li>
+                            <li><a href="work.html#coastal">Coastal Conservation</a></li>
+                            <li><a href="work.html#disaster">Disaster Preparedness</a></li>
+                            <li><a href="work.html#wash">WASH Initiatives</a></li>
+                            <li><a href="work.html#health">Community Health</a></li>
                         </ul>
                     </li>
                     <li><a href="where-we-work.html">Where We Work</a></li>
                     <li><a href="partners.html">Our Partners</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="donate.html" class="btn btn-primary" style="color:white; padding: 0.6rem 1.4rem;">Donate</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
@@ -79,26 +61,25 @@
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Thematic Pillars</span>
             <h1>Our Work & Interventions</h1>
-            <p>Practical, community-driven initiatives driving resilience and biodiversity conservation.</p>
+            <p style="color: #cbd5e1; font-size: 1.15rem;">Practical, community-driven initiatives driving resilience and biodiversity conservation.</p>
         </div>
     </div>
 
-    <section class="pillar-sec" id="fisheries">
+    <section class="section-padding" id="fisheries">
         <div class="container">
             <div class="grid-2">
                 <div>
                     <span class="badge"><i class="fa-solid fa-fish"></i> Pillar 01</span>
-                    <h2>Sustainable Fisheries</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Sustainable fisheries are essential for protecting marine ecosystems while securing the livelihoods of coastal communities. SRMSS works with traditional fishing communities to promote responsible fishing practices, strengthen community institutions, and support the sustainable management of coastal and marine resources.</p>
-                    <p style="color: var(--text-muted);">Our programmes encourage community participation in fisheries management, build the capacity of fisher groups, and improve access to government services and alternative income options during seasonal fishing ban periods, reducing pressure on marine resources while improving household resilience.</p>
+                    <h2 style="font-size: 2.2rem;">Sustainable Fisheries</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Sustainable fisheries are essential for protecting marine ecosystems while securing the livelihoods of coastal communities. SRMSS works with traditional fishing communities to promote responsible fishing practices, strengthen community institutions, and support the sustainable management of coastal and marine resources.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">We build the capacity of fisher groups, improve access to government services, and support alternative income options during seasonal fishing ban periods to improve household resilience.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
                         <li>Community-based fisheries management & responsible fishing practices.</li>
                         <li>Capacity building of fisher groups and community institutions.</li>
                         <li>Alternative livelihood opportunities during fishing ban periods.</li>
-                        <li>Access to government schemes and social protection.</li>
                         <li>Improved adoption of sustainable fishing practices among coastal communities.</li>
                         <li>Diversified income opportunities for fishing families during lean seasons.</li>
                     </ul>
@@ -107,51 +88,50 @@
         </div>
     </section>
 
-    <section class="pillar-sec" id="women" style="background: var(--bg-light);">
+    <section class="section-padding" id="women" style="background: var(--bg-light);">
         <div class="container">
             <div class="grid-2">
-                <div class="card">
-                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
+                <div class="card" style="border-top-color: var(--accent-green);">
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
                         <li>Strengthening Self-help Groups (SHGs) and leadership development.</li>
                         <li>Livelihood skill training and women-led micro-enterprise promotion.</li>
                         <li>Financial and digital literacy with market linkages for producers.</li>
                         <li>Awareness on gender equality, legal rights, health, and child protection.</li>
                         <li>Increased access to government welfare schemes and financial services.</li>
-                        <li>Greater participation of women in local decision-making and governance.</li>
                     </ul>
                 </div>
                 <div>
                     <span class="badge"><i class="fa-solid fa-person-dress"></i> Pillar 02</span>
-                    <h2>Women Empowerment</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Women are central to the social and economic progress of every community. SRMSS works with women from rural and vulnerable communities to strengthen their leadership, improve livelihood opportunities, and increase access to resources, institutions, and government services.</p>
-                    <p style="color: var(--text-muted);">Our approach combines economic empowerment with social awareness. We support women to build strong Self-Help Groups (SHGs), develop vocational skills, start small enterprises, improve financial literacy, and participate confidently in household decision-making and local governance.</p>
+                    <h2 style="font-size: 2.2rem;">Women Empowerment</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Women are central to the social and economic progress of every community. SRMSS works with women from rural and vulnerable communities to strengthen their leadership, improve livelihood opportunities, and increase access to resources, institutions, and government services.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">We support women to build strong Self-Help Groups (SHGs), develop vocational skills, start small enterprises, improve financial literacy, and participate confidently in local governance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pillar-sec" id="coastal">
+    <section class="section-padding" id="coastal">
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
                 <span class="badge"><i class="fa-solid fa-water"></i> Pillar 03</span>
-                <h2>Coastal Ecosystem Conservation</h2>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Healthy coastal ecosystems support biodiversity, sustain livelihoods, and protect communities from climate change impacts. We collaborate with coastal communities, academic institutions, and conservation partners to restore and protect habitats through scientific evidence and local stewardship.</p>
+                <h2 style="font-size: 2.4rem;">Coastal Ecosystem Conservation</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Healthy coastal ecosystems support biodiversity, sustain livelihoods, and protect communities. We collaborate with coastal communities, academic institutions, and conservation partners to restore habitats through scientific evidence and local stewardship.</p>
             </div>
             <div class="grid-2" style="gap: 2rem;">
-                <div class="card" style="border-top: 4px solid var(--accent-gold);">
-                    <h4 style="color: var(--accent-gold);"><i class="fa-solid fa-crab"></i> Horseshoe Crab Conservation</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1rem;">The Odisha coast is a vital habitat for the Indian horseshoe crab (<em>Tachypleus gigas</em>), a "living fossil" surviving over 450 million years. As an indicator of intertidal habitat health, this IUCN Red List <strong>Endangered</strong> species is threatened by coastal development and accidental fishing capture.</p>
+                <div class="card" style="border-top-color: var(--accent-gold);">
+                    <h4 style="color: var(--accent-gold); font-size: 1.25rem;"><i class="fa-solid fa-crab"></i> Horseshoe Crab Conservation</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1.5rem;">The Odisha coast is a vital habitat for the Indian horseshoe crab (<em>Tachypleus gigas</em>), a "living fossil" surviving over 450 million years. This IUCN Red List Endangered species is threatened by coastal development and accidental fishing capture.</p>
                     <ul class="list-check">
-                        <li>Habitat monitoring, mapping, and documentation of breeding sites.</li>
-                        <li>Engagement with fishers to reduce accidental capture and promote safe release.</li>
-                        <li>Rescue and rehabilitation of stranded horseshoe crabs.</li>
-                        <li>Citizen science and community-based biodiversity monitoring.</li>
+                        <li>Habitat monitoring and documentation of breeding sites.</li>
+                        <li>Engagement with fishers to promote safe release.</li>
+                        <li>Rescue and rehabilitation of stranded crabs.</li>
+                        <li>Citizen science and biodiversity monitoring.</li>
                     </ul>
                 </div>
-                <div class="card" style="border-top: 4px solid var(--accent-green);">
-                    <h4 style="color: var(--accent-green);"><i class="fa-solid fa-recycle"></i> Coastal Waste Management</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1rem;">Plastic pollution and unmanaged solid waste pose serious threats to coastal ecosystems, marine wildlife, fisheries, and public health. SRMSS promotes community-led waste management solutions that reduce waste entering rivers, estuaries, and the sea.</p>
+                <div class="card" style="border-top-color: var(--accent-green);">
+                    <h4 style="color: var(--accent-green); font-size: 1.25rem;"><i class="fa-solid fa-recycle"></i> Coastal Waste Management</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1.5rem;">Plastic pollution and unmanaged solid waste pose serious threats to marine wildlife and public health. SRMSS promotes community-led waste management solutions that reduce waste entering rivers, estuaries, and the sea.</p>
                     <ul class="list-check">
                         <li>Beach, riverbank, and estuary clean-up drives.</li>
                         <li>Plastic waste reduction and source segregation.</li>
@@ -163,71 +143,67 @@
         </div>
     </section>
 
-    <section class="pillar-sec" id="disaster" style="background: var(--bg-light);">
+    <section class="section-padding" id="disaster" style="background: var(--bg-light);">
         <div class="container">
             <div class="grid-2">
                 <div>
                     <span class="badge"><i class="fa-solid fa-house-tsunami"></i> Pillar 04</span>
-                    <h2>Disaster Preparedness & Response</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Coastal communities are increasingly exposed to cyclones, floods, storm surges, and climate-related disasters that threaten lives and essential infrastructure. SRMSS works with vulnerable communities to strengthen local preparedness, reduce disaster risks, and support timely response and recovery during emergencies.</p>
-                    <p style="color: var(--text-muted);">By empowering communities to take the lead in preparedness planning and volunteer training, we help improve resilience and reduce the long-term impacts of disasters.</p>
+                    <h2 style="font-size: 2.2rem;">Disaster Preparedness</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Coastal communities are increasingly exposed to cyclones, floods, and storm surges. SRMSS works with vulnerable communities to strengthen local preparedness, reduce disaster risks, and support timely response and recovery during emergencies.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">By empowering communities to take the lead in preparedness planning and volunteer training, we help improve resilience and reduce the long-term impacts of disasters.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        <li>Formation and strengthening of Village Disaster Management Committees.</li>
+                        <li>Formation of Village Disaster Management Committees.</li>
                         <li>Capacity building of community volunteers for emergency response.</li>
                         <li>Early warning dissemination and evacuation preparedness.</li>
                         <li>First aid, search and rescue, and emergency response training.</li>
                         <li>Relief coordination and humanitarian assistance during emergencies.</li>
-                        <li>Livelihood recovery and post-disaster rehabilitation support.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pillar-sec" id="wash">
+    <section class="section-padding" id="wash">
         <div class="container">
             <div class="grid-2">
-                <div class="card">
-                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
+                <div class="card" style="border-top-color: var(--accent-green);">
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
                         <li>Improving access to safe drinking water in coastal communities.</li>
                         <li>Community sanitation infrastructure and sanitation awareness.</li>
                         <li>Hygiene promotion and behaviour change communication.</li>
                         <li>Menstrual hygiene awareness and school management programs.</li>
-                        <li>Water conservation and sustainable water resource management.</li>
                         <li>Climate-resilient WASH solutions for salinity-prone coastal areas.</li>
                     </ul>
                 </div>
                 <div>
                     <span class="badge"><i class="fa-solid fa-faucet-drip"></i> Pillar 05</span>
-                    <h2>WASH Initiatives</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Access to safe drinking water, improved sanitation, and good hygiene practices is essential for coastal communities, where salinity intrusion, water contamination, flooding, and extreme weather often affect water security and public health.</p>
-                    <p style="color: var(--text-muted);">SRMSS improves WASH services through community participation, behaviour change communication, and collaboration with local governments. We also work with schools to create healthy learning environments and promote menstrual hygiene management.</p>
+                    <h2 style="font-size: 2.2rem;">WASH Initiatives</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Access to safe drinking water, improved sanitation, and good hygiene practices is essential for coastal communities, where salinity intrusion, water contamination, and flooding often affect public health.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">SRMSS improves WASH services through community participation, behaviour change communication, and collaboration with local governments. We also work with schools to create healthy learning environments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pillar-sec" id="health" style="background: var(--bg-light);">
+    <section class="section-padding" id="health" style="background: var(--bg-light);">
         <div class="container">
             <div class="grid-2">
                 <div>
                     <span class="badge"><i class="fa-solid fa-heart-pulse"></i> Pillar 06</span>
-                    <h2>Community Health</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Good health is the foundation of resilient communities. Many rural and coastal communities face challenges in accessing preventive and primary healthcare due to limited health infrastructure, distance from medical facilities, and low awareness.</p>
-                    <p style="color: var(--text-muted);">SRMSS improves access to essential health services by bringing health awareness, early screening, and community-based healthcare closer to underserved populations through partnerships with government departments and community volunteers.</p>
+                    <h2 style="font-size: 2.2rem;">Community Health</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Many rural and coastal communities face challenges in accessing preventive healthcare due to limited infrastructure and distance from medical facilities. SRMSS improves access by bringing health awareness, early screening, and community-based healthcare closer to underserved populations.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
                         <li>Community health camps and specialized outreach services.</li>
                         <li>Preventive health screening and early disease detection.</li>
                         <li>Maternal, newborn, and child health awareness programs.</li>
                         <li>Nutrition education and targeted anaemia prevention.</li>
-                        <li>Adolescent health and comprehensive life skills education.</li>
                         <li>Awareness on non-communicable diseases (NCDs) and referral networks.</li>
                     </ul>
                 </div>
@@ -236,7 +212,38 @@
     </section>
 
     <footer>
-        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
+                    <p style="color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; line-height: 1.6;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="legal-status.html">Legal Status</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li><li><a href="work.html#women">Women Empowerment</a></li><li><a href="work.html#coastal">Horseshoe Crab Protection</a></li><li><a href="work.html#disaster">Disaster Preparedness</a></li><li><a href="work.html#wash">WASH Initiatives</a></li><li><a href="work.html#health">Community Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact & Statutory</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--accent-green);"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-green);"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
+                        <li><i class="fa-solid fa-file-shield" style="color: var(--accent-green);"></i> <span>Societies Registration Act, 1860</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
     <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
