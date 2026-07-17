@@ -9,50 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-blue: #0b2c4d; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
-        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
-        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
-        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
-        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links li { position: relative; }
-        .nav-links a { font-weight: 600; font-size: 0.9rem; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
-        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
-        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
-        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
-        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
-        .section-padding { padding: 5rem 0; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
-        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
-        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+        :root{--primary-blue:#0b2c4d;--secondary-blue:#164273;--accent-green:#107c41;--emerald-light:#e6f4ed;--accent-gold:#f59e0b;--gold-light:#fef3c7;--text-dark:#1e293b;--text-muted:#64748b;--bg-light:#f8fafc;--white:#ffffff;--card-shadow:0 10px 25px -5px rgba(0,0,0,0.08);--transition:all 0.3s ease}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--bg-light);line-height:1.65;overflow-x:hidden}h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;color:var(--primary-blue);line-height:1.25}a{text-decoration:none;color:inherit;transition:var(--transition)}ul{list-style:none}.container{max-width:1240px;margin:0 auto;padding:0 2rem}.badge{display:inline-block;padding:.45rem 1.15rem;background:var(--emerald-light);color:var(--accent-green);border-radius:50px;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.85rem;border-radius:50px;font-weight:600;background:var(--accent-green);color:var(--white);gap:.6rem;border:none;cursor:pointer;transition:.3s}.btn:hover{background:#0c6333;transform:translateY(-2px);box-shadow:0 6px 16px rgba(16,124,65,.3)}.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4)}.btn-outline:hover{background:var(--white);color:var(--primary-blue)}.top-bar{background:#05192d;color:#cbd5e1;font-size:.85rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08)}.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.top-bar span{display:inline-flex;align-items:center;gap:.5rem}.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--white);margin-left:.5rem;transition:.3s}.social-icons a:hover{background:var(--accent-green);transform:translateY(-2px)}header{position:sticky;top:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);z-index:10000;box-shadow:0 4px 10px rgba(0,0,0,.05)}nav{display:flex;justify-content:space-between;align-items:center;height:85px}.logo-container{display:flex;align-items:center;gap:.8rem}.logo-img{width:50px;height:50px;border-radius:50%;object-fit:contain;background:var(--white)}.logo-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--primary-blue);line-height:1}.logo-subtitle{font-size:.65rem;color:var(--accent-green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:block;margin-top:4px}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links li{position:relative}.nav-links a{font-weight:600;font-size:.9rem}.nav-links a:hover,.nav-links a.active{color:var(--accent-green)}.dropdown-menu{position:absolute;top:100%;left:0;width:240px;background:var(--white);border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,.15);padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--transition);z-index:10001}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li a{padding:.6rem 1.2rem;display:block;font-size:.85rem;color:var(--text-muted)}.dropdown-menu li a:hover{background:var(--bg-light);color:var(--accent-green)}.mobile-toggle{display:none;font-size:1.5rem;cursor:pointer;color:var(--primary-blue)}.banner{background:linear-gradient(135deg,#0f335c,#05192d);color:var(--white);padding:6rem 0 4rem;text-align:center}.banner h1{font-size:3.2rem;margin-bottom:1.2rem;color:white}.section-padding{padding:5rem 0}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}.card{background:var(--white);padding:2.5rem;border-radius:20px;box-shadow:var(--card-shadow);transition:.3s;border-top:4px solid var(--primary-blue)}footer{background:#05192d;color:var(--white);padding:4.5rem 0 2rem;border-top:4px solid var(--accent-green)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3.5rem;margin-bottom:3.5rem}.footer-links h4{color:var(--white);font-size:1.1rem;margin-bottom:1.25rem}.footer-links ul li a{color:#94a3b8;font-size:.9rem;transition:.3s}.footer-links ul li a:hover{color:var(--accent-green)}.footer-contact li{display:flex;gap:.8rem;color:#94a3b8;margin-bottom:1rem;font-size:.9rem;line-height:1.5}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;text-align:center;color:#64748b;font-size:.85rem}@media (max-width:1024px){.grid-2,.footer-grid{grid-template-columns:1fr 1fr}}@media (max-width:768px){.grid-2,.footer-grid{grid-template-columns:1fr}.nav-links{position:fixed;top:85px;left:-100%;width:100%;height:calc(100vh - 85px);background:var(--white);flex-direction:column;padding-top:2rem;transition:var(--transition);z-index:99999}.nav-links.active{left:0}.mobile-toggle{display:block}.dropdown-menu{position:static;box-shadow:none;display:none}.dropdown:hover .dropdown-menu{display:block}.banner{padding:4rem 0 2rem}}
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="container">
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <span><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> +91 8763457103</span>
+                <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> srmssodisha@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
                 <a href="index.html" class="logo-container">
-                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
+                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50'">
                     <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown"><a href="work.html">Our Work ▾</a>
+                    <li class="dropdown"><a href="work.html">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
                             <li><a href="work.html#women">Women Empowerment</a></li>
@@ -64,8 +47,10 @@
                     </li>
                     <li><a href="where-we-work.html" class="active">Where We Work</a></li>
                     <li><a href="partners.html">Our Partners</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="donate.html" class="btn btn-primary" style="color:white; padding: 0.6rem 1.4rem;">Donate</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
@@ -76,7 +61,7 @@
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Geographic Footprint</span>
             <h1>Where We Work</h1>
-            <p>Expanding across several districts of Odisha with strong grassroots commitment.</p>
+            <p style="color: #cbd5e1; font-size: 1.15rem;">Expanding across several districts of Odisha with strong grassroots commitment.</p>
         </div>
     </div>
 
@@ -85,17 +70,17 @@
             <div class="grid-2">
                 <div>
                     <span class="badge">Odisha, India</span>
-                    <h2>Dedicated to Vulnerable Communities</h2>
-                    <p style="color: var(--text-muted); margin: 1rem 0;">Since its inception in 2007 in Odisha, Subha Rashmi Mahila Seva Samiti has been working with rural and coastal communities to improve livelihoods, conserve natural resources, strengthen local institutions, and increase access to basic services for vulnerable households.</p>
-                    <p style="color: var(--text-muted);">Over the years, the organization has expanded its work across several districts of Odisha while strictly maintaining its strong grassroots presence. Our work directly targets underserved populations facing geographic isolation, climate vulnerability, and economic challenges.</p>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Dedicated to Vulnerable Communities</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Since its inception in 2007 in Odisha, Subha Rashmi Mahila Seva Samiti has been working with rural and coastal communities to improve livelihoods, conserve natural resources, strengthen local institutions, and increase access to basic services for vulnerable households.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">Over the years, the organization has expanded its work across several districts of Odisha while strictly maintaining its strong grassroots presence. Our work directly targets underserved populations facing geographic isolation, climate vulnerability, and economic challenges.</p>
                 </div>
-                <div class="card" style="background: var(--primary-blue); color: var(--white);">
-                    <h3 style="color: var(--white); margin-bottom: 1.5rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--accent-gold);"></i> Core Operational Landscapes</h3>
-                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Coastal Fishing Villages:</strong> Supporting traditional fishing communities along the Odisha coastline with sustainable fisheries management.</span></li>
-                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Intertidal & Estuarine Habitats:</strong> Protecting critical spawning grounds for endangered marine species like <em>Tachypleus gigas</em> along beaches and riverbanks.</span></li>
-                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Salinity-Prone Communities:</strong> Addressing water contamination, salinity intrusion, and flooding through climate-resilient WASH infrastructure.</span></li>
-                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Rural & Underserved Villages:</strong> Empowering women's Self-Help Groups (SHGs) and bringing healthcare screening closer to remote households.</span></li>
+                <div class="card" style="background: var(--primary-blue); color: var(--white); border-top:none;">
+                    <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.5rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--accent-gold);"></i> Core Operational Landscapes</h3>
+                    <ul style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span style="font-size: 1.05rem;"><strong>Coastal Fishing Villages:</strong> Supporting traditional fishing communities along the Odisha coastline with sustainable fisheries management.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span style="font-size: 1.05rem;"><strong>Intertidal & Estuarine Habitats:</strong> Protecting critical spawning grounds for endangered marine species like <em>Tachypleus gigas</em>.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span style="font-size: 1.05rem;"><strong>Salinity-Prone Communities:</strong> Addressing water contamination, salinity intrusion, and flooding through WASH infrastructure.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span style="font-size: 1.05rem;"><strong>Rural & Underserved Villages:</strong> Empowering women's Self-Help Groups (SHGs) and bringing healthcare screening closer to remote households.</span></li>
                     </ul>
                 </div>
             </div>
@@ -103,7 +88,38 @@
     </section>
 
     <footer>
-        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
+                    <p style="color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; line-height: 1.6;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="legal-status.html">Legal Status</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li><li><a href="work.html#women">Women Empowerment</a></li><li><a href="work.html#coastal">Horseshoe Crab Protection</a></li><li><a href="work.html#disaster">Disaster Preparedness</a></li><li><a href="work.html#wash">WASH Initiatives</a></li><li><a href="work.html#health">Community Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact & Statutory</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--accent-green);"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-green);"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
+                        <li><i class="fa-solid fa-file-shield" style="color: var(--accent-green);"></i> <span>Societies Registration Act, 1860</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
     <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
