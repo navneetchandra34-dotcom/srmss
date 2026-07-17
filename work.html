@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Work | SRMSS</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .pillar-sec { padding: 4rem 0; border-bottom: 1px solid #e2e8f0; }
-        .pillar-sec:last-child { border-bottom: none; }
-        .list-check li { position: relative; padding-left: 1.5rem; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-muted); }
+        :root { --primary-blue: #0b2c4d; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
+        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
+        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
+        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
+        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
+        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
+        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
+        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
+        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
+        .pillar-sec { padding: 5rem 0; border-bottom: 1px solid #e2e8f0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: flex-start; }
+        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
+        .list-check li { position: relative; padding-left: 1.5rem; margin-bottom: 0.7rem; font-size: 0.95rem; color: var(--text-muted); }
         .list-check li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent-green); font-weight: 800; }
-        .impact-box { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; border-left: 4px solid var(--accent-gold); }
+        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
+        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
     </style>
 </head>
 <body>
@@ -20,36 +51,35 @@
             <nav>
                 <a href="index.html" class="logo-container">
                     <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
-                    <div class="logo-text"><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
+                    <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html">About Us</a></li>
-                    <li>
-                        <a href="work.html" class="active">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
+                    <li class="dropdown"><a href="work.html" class="active">Our Work ▾</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#fisheries"><i class="fa-solid fa-fish"></i> Sustainable Fisheries</a></li>
-                            <li><a href="#women"><i class="fa-solid fa-person-dress"></i> Women Empowerment</a></li>
-                            <li><a href="#coastal"><i class="fa-solid fa-water"></i> Coastal Conservation</a></li>
-                            <li><a href="#disaster"><i class="fa-solid fa-house-tsunami"></i> Disaster Preparedness</a></li>
-                            <li><a href="#wash"><i class="fa-solid fa-faucet-drip"></i> WASH Initiatives</a></li>
-                            <li><a href="#health"><i class="fa-solid fa-heart-pulse"></i> Community Health</a></li>
+                            <li><a href="#fisheries">Sustainable Fisheries</a></li>
+                            <li><a href="#women">Women Empowerment</a></li>
+                            <li><a href="#coastal">Coastal Conservation</a></li>
+                            <li><a href="#disaster">Disaster Preparedness</a></li>
+                            <li><a href="#wash">WASH Initiatives</a></li>
+                            <li><a href="#health">Community Health</a></li>
                         </ul>
                     </li>
                     <li><a href="where-we-work.html">Where We Work</a></li>
                     <li><a href="partners.html">Our Partners</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn btn-primary" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
         </div>
     </header>
 
-    <div class="page-banner">
+    <div class="banner">
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Thematic Pillars</span>
             <h1>Our Work & Interventions</h1>
-            [span_57](start_span)<p>Implementing practical, community-driven initiatives across six foundational areas of development and conservation[span_57](end_span).</p>
+            <p>Practical, community-driven initiatives driving resilience and biodiversity conservation.</p>
         </div>
     </div>
 
@@ -59,18 +89,18 @@
                 <div>
                     <span class="badge"><i class="fa-solid fa-fish"></i> Pillar 01</span>
                     <h2>Sustainable Fisheries</h2>
-                    [span_58](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Sustainable fisheries are essential for protecting marine ecosystems while securing the livelihoods of coastal communities[span_58](end_span). [span_59](start_span)SRMSS works with traditional fishing communities to promote responsible fishing practices, strengthen community institutions, and support the sustainable management of coastal and marine resources[span_59](end_span).</p>
-                    [span_60](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Our programmes encourage community participation in fisheries management, build the capacity of fisher groups, and improve access to government services and livelihood opportunities[span_60](end_span). [span_61](start_span)We also support alternative income options during seasonal fishing ban periods, helping reduce pressure on marine resources[span_61](end_span).</p>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Sustainable fisheries are essential for protecting marine ecosystems while securing the livelihoods of coastal communities. SRMSS works with traditional fishing communities to promote responsible fishing practices, strengthen community institutions, and support the sustainable management of coastal and marine resources.</p>
+                    <p style="color: var(--text-muted);">Our programmes encourage community participation in fisheries management, build the capacity of fisher groups, and improve access to government services and alternative income options during seasonal fishing ban periods, reducing pressure on marine resources while improving household resilience.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem; color: var(--primary-blue);">Key Interventions & Impact</h4>
+                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        [span_62](start_span)<li>Community-based fisheries management[span_62](end_span).</li>
-                        [span_63](start_span)<li>Promotion of responsible and sustainable fishing practices[span_63](end_span).</li>
-                        [span_64](start_span)<li>Alternative livelihood opportunities during fishing ban periods[span_64](end_span).</li>
-                        [span_65](start_span)<li>Access to government schemes and social protection[span_65](end_span).</li>
-                        [span_66](start_span)<li>Strengthened community institutions for participatory management[span_66](end_span).</li>
-                        [span_67](start_span)<li>Diversified income opportunities for fishing families during lean seasons[span_67](end_span).</li>
+                        <li>Community-based fisheries management & responsible fishing practices.</li>
+                        <li>Capacity building of fisher groups and community institutions.</li>
+                        <li>Alternative livelihood opportunities during fishing ban periods.</li>
+                        <li>Access to government schemes and social protection.</li>
+                        <li>Improved adoption of sustainable fishing practices among coastal communities.</li>
+                        <li>Diversified income opportunities for fishing families during lean seasons.</li>
                     </ul>
                 </div>
             </div>
@@ -81,21 +111,21 @@
         <div class="container">
             <div class="grid-2">
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem; color: var(--primary-blue);">Key Interventions & Impact</h4>
+                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        [span_68](start_span)<li>Strengthening Self-help Groups (SHGs) and leadership capacity[span_68](end_span).</li>
-                        [span_69](start_span)<li>Livelihood, vocational training, and micro-enterprise promotion[span_69](end_span).</li>
-                        [span_70](start_span)<li>Financial and digital literacy with market linkages[span_70](end_span).</li>
-                        [span_71](start_span)<li>Gender equality, legal awareness, and child protection education[span_71](end_span).</li>
-                        [span_72](start_span)<li>Increased access to government welfare schemes and social security[span_72](end_span).</li>
-                        [span_73](start_span)[span_74](start_span)<li>Greater participation of women in local governance and decision-making[span_73](end_span)[span_74](end_span).</li>
+                        <li>Strengthening Self-help Groups (SHGs) and leadership development.</li>
+                        <li>Livelihood skill training and women-led micro-enterprise promotion.</li>
+                        <li>Financial and digital literacy with market linkages for producers.</li>
+                        <li>Awareness on gender equality, legal rights, health, and child protection.</li>
+                        <li>Increased access to government welfare schemes and financial services.</li>
+                        <li>Greater participation of women in local decision-making and governance.</li>
                     </ul>
                 </div>
                 <div>
                     <span class="badge"><i class="fa-solid fa-person-dress"></i> Pillar 02</span>
                     <h2>Women Empowerment</h2>
-                    [span_75](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Women are central to the social and economic progress of every community[span_75](end_span). [span_76](start_span)SRMSS works with women from rural and vulnerable communities to strengthen their leadership, improve livelihood opportunities, and increase access to resources, institutions, and government services[span_76](end_span).</p>
-                    [span_77](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Our approach combines economic empowerment with social awareness[span_77](end_span). [span_78](start_span)We support women to build strong Self-Help Groups (SHGs), develop livelihood skills, start and expand small enterprises, improve financial literacy, and access social protection schemes[span_78](end_span).</p>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Women are central to the social and economic progress of every community. SRMSS works with women from rural and vulnerable communities to strengthen their leadership, improve livelihood opportunities, and increase access to resources, institutions, and government services.</p>
+                    <p style="color: var(--text-muted);">Our approach combines economic empowerment with social awareness. We support women to build strong Self-Help Groups (SHGs), develop vocational skills, start small enterprises, improve financial literacy, and participate confidently in household decision-making and local governance.</p>
                 </div>
             </div>
         </div>
@@ -103,32 +133,30 @@
 
     <section class="pillar-sec" id="coastal">
         <div class="container">
-            <div style="max-width: 850px; margin: 0 auto 3rem; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
                 <span class="badge"><i class="fa-solid fa-water"></i> Pillar 03</span>
                 <h2>Coastal Ecosystem Conservation</h2>
-                [span_79](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Healthy coastal ecosystems support biodiversity, sustain livelihoods, and protect communities from the impacts of climate change[span_79](end_span). [span_80](start_span)SRMSS works with coastal communities, government agencies, academic institutions, and conservation partners to restore and protect habitats through community participation and scientific evidence[span_80](end_span).</p>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Healthy coastal ecosystems support biodiversity, sustain livelihoods, and protect communities from climate change impacts. We collaborate with coastal communities, academic institutions, and conservation partners to restore and protect habitats through scientific evidence and local stewardship.</p>
             </div>
             <div class="grid-2" style="gap: 2rem;">
                 <div class="card" style="border-top: 4px solid var(--accent-gold);">
                     <h4 style="color: var(--accent-gold);"><i class="fa-solid fa-crab"></i> Horseshoe Crab Conservation</h4>
-                    [span_81](start_span)<p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1rem;">The Odisha coast is one of the most important habitats for the Indian horseshoe crab (*Tachypleus gigas*), often referred to as a "living fossil" because it has survived for more than 450 million years[span_81](end_span). [span_82](start_span)The species is included in the IUCN Red List of Threatened Species as **Endangered** due to habitat degradation, coastal development, and accidental fishing capture[span_82](end_span).</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1rem;">The Odisha coast is a vital habitat for the Indian horseshoe crab (<em>Tachypleus gigas</em>), a "living fossil" surviving over 450 million years. As an indicator of intertidal habitat health, this IUCN Red List <strong>Endangered</strong> species is threatened by coastal development and accidental fishing capture.</p>
                     <ul class="list-check">
-                        [span_83](start_span)<li>Habitat monitoring, mapping, and documentation[span_83](end_span).</li>
-                        [span_84](start_span)[span_85](start_span)<li>Engagement with fishers to reduce accidental capture and promote safe release[span_84](end_span)[span_85](end_span).</li>
-                        [span_86](start_span)<li>Rescue and rehabilitation of stranded horseshoe crabs[span_86](end_span).</li>
-                        [span_87](start_span)<li>Citizen science and community-based biodiversity monitoring[span_87](end_span).</li>
-                        [span_88](start_span)<li>Protection of critical spawning and breeding habitats[span_88](end_span).</li>
+                        <li>Habitat monitoring, mapping, and documentation of breeding sites.</li>
+                        <li>Engagement with fishers to reduce accidental capture and promote safe release.</li>
+                        <li>Rescue and rehabilitation of stranded horseshoe crabs.</li>
+                        <li>Citizen science and community-based biodiversity monitoring.</li>
                     </ul>
                 </div>
                 <div class="card" style="border-top: 4px solid var(--accent-green);">
                     <h4 style="color: var(--accent-green);"><i class="fa-solid fa-recycle"></i> Coastal Waste Management</h4>
-                    [span_89](start_span)<p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1rem;">Plastic pollution and unmanaged solid waste pose serious threats to coastal ecosystems, marine wildlife, fisheries, and public health[span_89](end_span). [span_90](start_span)SRMSS promotes community-led waste management solutions that reduce waste entering rivers, estuaries, and the sea[span_90](end_span).</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 1rem;">Plastic pollution and unmanaged solid waste pose serious threats to coastal ecosystems, marine wildlife, fisheries, and public health. SRMSS promotes community-led waste management solutions that reduce waste entering rivers, estuaries, and the sea.</p>
                     <ul class="list-check">
-                        [span_91](start_span)<li>Beach, riverbank, and estuary clean-up drives[span_91](end_span).</li>
-                        [span_92](start_span)<li>Plastic waste reduction and source segregation[span_92](end_span).</li>
-                        [span_93](start_span)<li>Community awareness on responsible waste management[span_93](end_span).</li>
-                        [span_94](start_span)<li>Environmental education for schools and youth[span_94](end_span).</li>
-                        [span_95](start_span)<li>Promotion of recycling and circular economy practices[span_95](end_span).</li>
+                        <li>Beach, riverbank, and estuary clean-up drives.</li>
+                        <li>Plastic waste reduction and source segregation.</li>
+                        <li>Environmental education for schools and youth.</li>
+                        <li>Promotion of recycling and circular economy practices.</li>
                     </ul>
                 </div>
             </div>
@@ -140,20 +168,19 @@
             <div class="grid-2">
                 <div>
                     <span class="badge"><i class="fa-solid fa-house-tsunami"></i> Pillar 04</span>
-                    <h2>Disaster Preparedness and Response</h2>
-                    [span_96](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Coastal communities are increasingly exposed to cyclones, floods, storm surges, and other climate-related disasters that threaten lives, livelihoods, and essential infrastructure[span_96](end_span). [span_97](start_span)SRMSS works with vulnerable communities to strengthen local preparedness, reduce disaster risks, and support timely response and recovery during emergencies[span_97](end_span).</p>
-                    [span_98](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">By empowering communities to take the lead in preparedness and response, we help improve resilience and reduce the impacts of disasters[span_98](end_span).</p>
+                    <h2>Disaster Preparedness & Response</h2>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Coastal communities are increasingly exposed to cyclones, floods, storm surges, and climate-related disasters that threaten lives and essential infrastructure. SRMSS works with vulnerable communities to strengthen local preparedness, reduce disaster risks, and support timely response and recovery during emergencies.</p>
+                    <p style="color: var(--text-muted);">By empowering communities to take the lead in preparedness planning and volunteer training, we help improve resilience and reduce the long-term impacts of disasters.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem; color: var(--primary-blue);">Key Interventions & Impact</h4>
+                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        [span_99](start_span)<li>Community-based disaster preparedness planning[span_99](end_span).</li>
-                        [span_100](start_span)<li>Formation and strengthening of Village Disaster Management Committees[span_100](end_span).</li>
-                        [span_101](start_span)<li>Capacity building of community volunteers[span_101](end_span).</li>
-                        [span_102](start_span)<li>Early warning dissemination and evacuation preparedness[span_102](end_span).</li>
-                        [span_103](start_span)<li>First aid, search and rescue, and emergency response training[span_103](end_span).</li>
-                        [span_104](start_span)<li>Relief coordination and humanitarian assistance during emergencies[span_104](end_span).</li>
-                        [span_105](start_span)<li>Livelihood recovery and rehabilitation support[span_105](end_span).</li>
+                        <li>Formation and strengthening of Village Disaster Management Committees.</li>
+                        <li>Capacity building of community volunteers for emergency response.</li>
+                        <li>Early warning dissemination and evacuation preparedness.</li>
+                        <li>First aid, search and rescue, and emergency response training.</li>
+                        <li>Relief coordination and humanitarian assistance during emergencies.</li>
+                        <li>Livelihood recovery and post-disaster rehabilitation support.</li>
                     </ul>
                 </div>
             </div>
@@ -164,22 +191,21 @@
         <div class="container">
             <div class="grid-2">
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem; color: var(--primary-blue);">Key Interventions & Impact</h4>
+                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        [span_106](start_span)<li>Improving access to safe drinking water in coastal communities[span_106](end_span).</li>
-                        [span_107](start_span)<li>Community sanitation and sanitation awareness[span_107](end_span).</li>
-                        [span_108](start_span)<li>Hygiene promotion and behaviour change communication[span_108](end_span).</li>
-                        [span_109](start_span)<li>Menstrual hygiene awareness and management in schools[span_109](end_span).</li>
-                        [span_110](start_span)<li>Water conservation and sustainable water resource management[span_110](end_span).</li>
-                        [span_111](start_span)[span_112](start_span)<li>Climate-resilient WASH solutions for salinity-prone coastal areas[span_111](end_span)[span_112](end_span).</li>
-                        [span_113](start_span)<li>Reduced risk of water-borne diseases through improved hygiene[span_113](end_span).</li>
+                        <li>Improving access to safe drinking water in coastal communities.</li>
+                        <li>Community sanitation infrastructure and sanitation awareness.</li>
+                        <li>Hygiene promotion and behaviour change communication.</li>
+                        <li>Menstrual hygiene awareness and school management programs.</li>
+                        <li>Water conservation and sustainable water resource management.</li>
+                        <li>Climate-resilient WASH solutions for salinity-prone coastal areas.</li>
                     </ul>
                 </div>
                 <div>
                     <span class="badge"><i class="fa-solid fa-faucet-drip"></i> Pillar 05</span>
-                    <h2>Water, Sanitation and Hygiene (WASH)</h2>
-                    [span_114](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Access to safe drinking water, improved sanitation, and good hygiene practices is essential for the health and well-being of coastal communities, where salinity intrusion, water contamination, flooding, and extreme weather events often affect water security and public health[span_114](end_span).</p>
-                    [span_115](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">SRMSS works with vulnerable coastal communities to improve WASH services through community participation, behaviour change, and collaboration with local governments and community institutions[span_115](end_span).</p>
+                    <h2>WASH Initiatives</h2>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Access to safe drinking water, improved sanitation, and good hygiene practices is essential for coastal communities, where salinity intrusion, water contamination, flooding, and extreme weather often affect water security and public health.</p>
+                    <p style="color: var(--text-muted);">SRMSS improves WASH services through community participation, behaviour change communication, and collaboration with local governments. We also work with schools to create healthy learning environments and promote menstrual hygiene management.</p>
                 </div>
             </div>
         </div>
@@ -191,19 +217,18 @@
                 <div>
                     <span class="badge"><i class="fa-solid fa-heart-pulse"></i> Pillar 06</span>
                     <h2>Community Health</h2>
-                    [span_116](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Good health is the foundation of resilient communities[span_116](end_span). [span_117](start_span)Many rural and coastal communities continue to face challenges in accessing preventive and primary healthcare due to limited health infrastructure, distance from medical facilities, and low awareness of preventive care[span_117](end_span).</p>
-                    [span_118](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">SRMSS works to improve access to essential health services by bringing health awareness, early screening, and community-based healthcare closer to underserved populations through partnerships with government departments and volunteers[span_118](end_span).</p>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Good health is the foundation of resilient communities. Many rural and coastal communities face challenges in accessing preventive and primary healthcare due to limited health infrastructure, distance from medical facilities, and low awareness.</p>
+                    <p style="color: var(--text-muted);">SRMSS improves access to essential health services by bringing health awareness, early screening, and community-based healthcare closer to underserved populations through partnerships with government departments and community volunteers.</p>
                 </div>
                 <div class="card">
-                    <h4 style="margin-bottom: 1rem; color: var(--primary-blue);">Key Interventions & Impact</h4>
+                    <h4 style="margin-bottom: 1rem;">Key Interventions & Measured Impact</h4>
                     <ul class="list-check">
-                        [span_119](start_span)<li>Community health camps and specialized outreach services[span_119](end_span).</li>
-                        [span_120](start_span)<li>Preventive health screening and early disease detection[span_120](end_span).</li>
-                        [span_121](start_span)<li>Maternal, newborn, and child health awareness programs[span_121](end_span).</li>
-                        [span_122](start_span)<li>Nutrition education and targeted anaemia prevention[span_122](end_span).</li>
-                        [span_123](start_span)<li>Adolescent health and comprehensive life skills education[span_123](end_span).</li>
-                        [span_124](start_span)<li>Awareness on non-communicable diseases (NCDs)[span_124](end_span).</li>
-                        [span_125](start_span)<li>Health referral networks and follow-up support[span_125](end_span).</li>
+                        <li>Community health camps and specialized outreach services.</li>
+                        <li>Preventive health screening and early disease detection.</li>
+                        <li>Maternal, newborn, and child health awareness programs.</li>
+                        <li>Nutrition education and targeted anaemia prevention.</li>
+                        <li>Adolescent health and comprehensive life skills education.</li>
+                        <li>Awareness on non-communicable diseases (NCDs) and referral networks.</li>
                     </ul>
                 </div>
             </div>
@@ -211,18 +236,8 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-bottom" style="border: none; padding: 0;">
-                <p>&copy; 2026 SRMSS. [span_126](start_span)Established by Late Jyotna Rani Jena[span_126](end_span).</p>
-                <p><a href="index.html">Home</a> | <a href="where-we-work.html">Where We Work</a> | <a href="contact.html">Contact Us</a></p>
-            </div>
-        </div>
+        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
     </footer>
-    <script>
-        document.getElementById('mobileToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-    </script>
+    <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
-                      </html>
-                      
+</html>
