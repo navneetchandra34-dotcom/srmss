@@ -112,7 +112,7 @@
         .quote-box p { color: var(--primary-blue); font-weight: 600; font-size: 1.05rem; margin: 0; font-style: italic; }
 
         /* Thematic Pillars Grid */
-        .pillar-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; }
+        .pillar-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
         .pillar-card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); }
         .pillar-header { padding: 2.2rem 2.2rem 1rem; position: relative; }
         .pillar-icon { width: 54px; height: 54px; border-radius: 14px; background: var(--emerald-light); color: var(--accent-green); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.5rem; }
@@ -120,10 +120,10 @@
         .pillar-card.blue .pillar-icon { background: #e0f2fe; color: var(--primary-blue); }
         .pillar-card h3 { font-size: 1.45rem; margin-bottom: 0.75rem; }
         .pillar-card p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 1.5rem; line-height: 1.6; }
-        .pillar-body { padding: 0 2.2rem 2.2rem; }
+        .pillar-body { padding: 0 2.2rem 2.2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .bullet-list { padding-left: 1.2rem; margin-bottom: 1.8rem; }
         .bullet-list li { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; list-style-type: disc; }
-        .card-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--accent-green); font-size: 0.92rem; transition: var(--transition); }
+        .card-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--accent-green); font-size: 0.92rem; transition: var(--transition); margin-top: auto; }
         .card-link:hover { gap: 0.8rem; color: var(--primary-blue); }
 
         /* Approach Step Methodology */
@@ -147,6 +147,83 @@
         .loc-list li { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; font-size: 0.96rem; color: var(--text-muted); }
         .loc-list li i { color: var(--accent-green); font-size: 1.2rem; margin-top: 3px; }
 
+        /* Institutional Recommendation Container */
+        .recommendation-wrapper {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+            border-left: 8px solid var(--accent-gold);
+            margin: 0 auto;
+            max-width: 1000px;
+            transition: var(--transition);
+        }
+        .recommendation-wrapper:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-5px);
+        }
+        .rec-quote-icon {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 8rem;
+            color: rgba(245, 158, 11, 0.05); /* Very faint gold watermark */
+            z-index: 0;
+        }
+        .rec-content {
+            position: relative;
+            z-index: 1;
+        }
+        .rec-text {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            font-style: italic;
+            font-weight: 500;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        .rec-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 1.5rem;
+        }
+        .rec-author img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: var(--bg-light);
+            padding: 8px;
+            border: 2px solid var(--emerald-light);
+        }
+        .rec-author-details h4 {
+            font-size: 1.15rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.2rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+        }
+        .rec-author-details p {
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .rec-author-details span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-top: 3px;
+        }
+
         /* Call to Action Banner */
         .cta-sec { background: #0a2540; color: var(--white); padding: 5rem 0; text-align: center; position: relative; }
         .cta-sec h2 { color: var(--white); font-size: 2.8rem; margin-bottom: 1rem; }
@@ -160,7 +237,7 @@
         .footer-links ul li { margin-bottom: 0.65rem; }
         .footer-links ul li a { color: #94a3b8; font-size: 0.9rem; }
         .footer-links ul li a:hover { color: var(--accent-green); padding-left: 5px; }
-        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem; align-items: flex-start; line-height: 1.5; }
+        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 0.8rem; font-size: 0.9rem; align-items: flex-start; line-height: 1.5; }
         .footer-contact li i { color: var(--accent-green); margin-top: 4px; }
         .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
@@ -182,6 +259,11 @@
             .hero p { margin: 0 auto 2rem; }
             .hero-stats { max-width: 300px; margin: 1.5rem auto 0; }
             .section-header h2, .hero h1, .cta-sec h2 { font-size: 2.2rem; }
+            
+            /* Mobile Recommendation Adjustments */
+            .recommendation-wrapper { padding: 2.5rem; }
+            .rec-text { font-size: 1.1rem; }
+            .rec-quote-icon { font-size: 5rem; }
         }
     </style>
 </head>
@@ -454,7 +536,7 @@
                     <span class="step-num">Step 08</span>
                     <div class="step-icon"><i class="fa-solid fa-leaf"></i></div>
                     <h4>Sustain</h4>
-                    <p>Resilient Communities</p>
+                    <p>Resilient & Sustainable Communities</p>
                 </div>
             </div>
         </div>
@@ -516,6 +598,31 @@
                     <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem; margin-bottom: 1.5rem;">We believe that lasting impact is achieved through collaboration. SRMSS works closely with women's groups, Panchayati Raj Institutions (PRIs), government health and fisheries departments, academic universities, and scientific researchers.</p>
                     <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">By bridging the gap between grassroots community knowledge and institutional expertise, we ensure our initiatives are scientifically sound, policy-aligned, and deeply supported by the people they serve.</p>
                     <a href="partners.html" class="btn btn-secondary"><i class="fa-solid fa-handshake"></i> Explore Our Partner Network</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light); padding-top: 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <span class="badge" style="background: var(--gold-light); color: var(--accent-gold);">Official Endorsement</span>
+                <h2>Trusted by the Government of India</h2>
+            </div>
+            
+            <div class="recommendation-wrapper">
+                <i class="fa-solid fa-quote-right rec-quote-icon"></i>
+                <div class="rec-content">
+                    <p class="rec-text">"We experienced that the organization operates with great accountability, transparency, and credibility; adhering to government guidelines at all levels while implementing the programmes. NETFISH strongly recommends the government, donor agencies, and other institutions provide financial assistance to SRMSS... Their professionalism, expertise, and dedication make them an ideal partner for any agency."</p>
+                    
+                    <div class="rec-author">
+                        <img src="52452.jpg" alt="NETFISH Logo" onerror="this.src='https://via.placeholder.com/75/107c41/ffffff?text=NF'">
+                        <div class="rec-author-details">
+                            <h4>Dr. Joice V Thomas</h4>
+                            <p>Chief Executive, NETFISH</p>
+                            <span>(MPEDA, Ministry of Commerce & Industry, Govt. of India)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
