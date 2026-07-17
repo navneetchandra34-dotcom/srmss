@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SRMSS</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-blue: #0b2c4d; --secondary-blue: #164273; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
+        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
+        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
+        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
+        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
+        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
+        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
+        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
+        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
+        .section-padding { padding: 5rem 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
+        .step-card { background: var(--white); padding: 1.8rem; border-radius: 16px; text-align: center; box-shadow: var(--card-shadow); }
+        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
+        @media (max-width: 900px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+    </style>
 </head>
 <body>
     <header>
@@ -13,26 +50,35 @@
             <nav>
                 <a href="index.html" class="logo-container">
                     <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
-                    <div class="logo-text"><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
+                    <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="work.html">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a></li>
+                    <li class="dropdown"><a href="work.html">Our Work ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
+                            <li><a href="work.html#women">Women Empowerment</a></li>
+                            <li><a href="work.html#coastal">Coastal Conservation</a></li>
+                            <li><a href="work.html#disaster">Disaster Preparedness</a></li>
+                            <li><a href="work.html#wash">WASH Initiatives</a></li>
+                            <li><a href="work.html#health">Community Health</a></li>
+                        </ul>
+                    </li>
                     <li><a href="where-we-work.html">Where We Work</a></li>
                     <li><a href="partners.html">Our Partners</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn btn-primary" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
         </div>
     </header>
 
-    <div class="page-banner">
+    <div class="banner">
         <div class="container">
-            <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Who We Are</span>
+            <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Institutional History</span>
             <h1>About Subha Rashmi Mahila Seva Samiti</h1>
-            [span_39](start_span)<p>A registered grassroots non-profit organization dedicated to inclusive development across Odisha since 2007[span_39](end_span).</p>
+            <p>A registered grassroots non-profit dedicated to inclusive growth across Odisha since 2007.</p>
         </div>
     </div>
 
@@ -42,92 +88,51 @@
                 <div>
                     <span class="badge">Our Origins</span>
                     <h2>Rooted in Grassroots Action</h2>
-                    [span_40](start_span)<p style="margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1.05rem;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization established in 2007 under the Societies Registration Act, 1860, in Odisha by Late Jyotna Rani Jena[span_40](end_span).</p>
-                    [span_41](start_span)<p style="margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1.05rem;">SRMSS began as a community-based initiative to respond to the challenges faced by women, children, fishing communities, and other vulnerable groups[span_41](end_span). [span_42](start_span)Over the years, the organization has expanded its work across several districts of Odisha while maintaining its strong grassroots presence[span_42](end_span).</p>
-                    [span_43](start_span)<p style="color: var(--text-muted); font-size: 1.05rem;">The organization was formed with the understanding that development is most effective when local communities are involved in identifying their priorities and taking part in the solutions[span_43](end_span).</p>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted);">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization formally established in 2007 under the Societies Registration Act, 1860, in Odisha by Late Jyotna Rani Jena.</p>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted);">The organization began as a targeted community-based initiative to respond directly to the socioeconomic and environmental challenges faced by women, children, traditional fishing communities, and vulnerable rural groups. Over the years, SRMSS has expanded its operational footprint across multiple districts of Odisha while strictly maintaining its deep grassroots presence.</p>
+                    <p style="color: var(--text-muted);">We collaborate closely with women's groups, government departments, Panchayati Raj Institutions (PRIs), and development agencies to address local issues through practical, community-driven execution.</p>
                 </div>
-                <div class="card" style="background: var(--emerald-light); border-left: 6px solid var(--accent-green);">
+                <div class="card" style="border-left: 6px solid var(--accent-green); background: #f1f8f4;">
                     <h3 style="color: var(--accent-green); margin-bottom: 1rem;"><i class="fa-solid fa-quote-left"></i> Our Guiding Principle</h3>
-                    [span_44](start_span)<p style="font-size: 1.2rem; color: var(--primary-blue); font-weight: 600; line-height: 1.6;">"Development is most effective when local communities are involved in identifying their priorities and taking part in the solutions[span_44](end_span)."</p>
-                    <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">— Core Ethos of SRMSS</p>
+                    <p style="font-size: 1.15rem; color: var(--primary-blue); font-weight: 600; line-height: 1.6;">"Development is most effective when local communities are directly involved in identifying their priorities and taking part in the solutions."</p>
+                    <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">— Fundamental Ethos of SRMSS Incorporation</p>
                 </div>
             </div>
 
             <div class="grid-2" style="gap: 2.5rem; margin-bottom: 5rem;">
                 <div class="card" style="border-top: 5px solid var(--primary-blue);">
-                    <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem;"><i class="fa-solid fa-eye"></i></div>
+                    <i class="fa-solid fa-eye" style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
                     <h3>Our Vision</h3>
-                    [span_45](start_span)<p style="color: var(--text-muted); margin-top: 1rem;">A just, inclusive, and resilient society where every person, especially women, children, and marginalized communities, has the opportunity to live with dignity, realize their potential, and contribute to sustainable and equitable development[span_45](end_span).</p>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">A just, inclusive, and resilient society where every person, especially women, children, and marginalized communities, has the opportunity to live with dignity, realize their potential, and contribute to sustainable and equitable development.</p>
                 </div>
                 <div class="card" style="border-top: 5px solid var(--accent-green);">
-                    <div style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 1rem;"><i class="fa-solid fa-bullseye"></i></div>
+                    <i class="fa-solid fa-bullseye" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
                     <h3>Our Mission</h3>
-                    [span_46](start_span)<p style="color: var(--text-muted); margin-top: 1rem;">To strengthen the capacities of communities through participatory development, promote gender equality and sustainable livelihoods, improve access to health and essential services, conserve natural resources, and promote partnerships that advance inclusive and environmentally sustainable development[span_46](end_span).</p>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">To strengthen the capacities of communities through participatory development, promote gender equality and sustainable livelihoods, improve access to health and essential services, conserve natural resources, and promote partnerships that advance inclusive and environmentally sustainable development.</p>
                 </div>
             </div>
 
-            <div class="section-header">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
                 <span class="badge">Methodology</span>
-                <h2>Our 8-Step Participatory Approach</h2>
-                [span_47](start_span)<p>Our structured development methodology ensures deep community ownership from consultation to long-term resilience[span_47](end_span).</p>
+                <h2>The 8-Step Participatory Approach</h2>
+                <p style="color: var(--text-muted);">Our systematic operational framework ensures community voices lead every project from conception to long-term sustainability.</p>
             </div>
             <div class="grid-4">
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-ear-listen" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">1. Listen</h4>
-                    [span_48](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Community Needs & Consultation[span_48](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-users" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">2. Engage</h4>
-                    [span_49](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Community Participation[span_49](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-book-open-reader" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">3. Build</h4>
-                    [span_50](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Capacity Building[span_50](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-sitemap" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">4. Organise</h4>
-                    [span_51](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Strengthen Local Institutions[span_51](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-handshake" style="font-size: 1.5rem; color: var(--accent-green); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">5. Connect</h4>
-                    [span_52](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Partnerships[span_52](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-gears" style="font-size: 1.5rem; color: var(--accent-green); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">6. Act</h4>
-                    [span_53](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Community-led Implementation[span_53](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: var(--accent-green); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">7. Learn</h4>
-                    [span_54](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Monitoring & Improvement[span_54](end_span)</p>
-                </div>
-                <div class="card" style="padding: 1.5rem; text-align: center;">
-                    <i class="fa-solid fa-leaf" style="font-size: 1.5rem; color: var(--accent-green); margin-bottom: 0.5rem;"></i>
-                    <h4 style="font-size: 1.1rem;">8. Sustain</h4>
-                    [span_55](start_span)<p style="font-size: 0.85rem; color: var(--text-muted);">Resilient & Sustainable Communities[span_55](end_span)</p>
-                </div>
+                <div class="step-card"><h4>1. Listen</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Community Needs & Consultation</p></div>
+                <div class="step-card"><h4>2. Engage</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Community Participation</p></div>
+                <div class="step-card"><h4>3. Build</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Capacity Building</p></div>
+                <div class="step-card"><h4>4. Organise</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Strengthen Local Institutions</p></div>
+                <div class="step-card"><h4>5. Connect</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Strategic Partnerships</p></div>
+                <div class="step-card"><h4>6. Act</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Community-Led Implementation</p></div>
+                <div class="step-card"><h4>7. Learn</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Monitoring & Improvement</p></div>
+                <div class="step-card"><h4>8. Sustain</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Resilient Communities</p></div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-bottom" style="border: none; padding: 0;">
-                <p>&copy; 2026 SRMSS. [span_56](start_span)Established by Late Jyotna Rani Jena[span_56](end_span).</p>
-                <p><a href="index.html">Home</a> | <a href="work.html">Our Work</a> | <a href="contact.html">Contact Us</a></p>
-            </div>
-        </div>
+        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
     </footer>
-    <script>
-        document.getElementById('mobileToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-    </script>
+    <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
 </html>
