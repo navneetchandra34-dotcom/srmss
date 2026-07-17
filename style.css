@@ -17,7 +17,10 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+
+/* Fixed the Anchor Jump Overlap Bug Here */
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 110px; }
+
 body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; overflow-x: hidden; }
 h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary-blue); line-height: 1.25; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
@@ -47,10 +50,10 @@ nav { display: flex; justify-content: space-between; align-items: center; height
 .nav-links a { font-weight: 600; color: var(--text-dark); font-size: 0.9rem; display: flex; align-items: center; gap: 0.35rem; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
 
-/* Dropdown Menu for Our Work */
-.dropdown-menu { position: absolute; top: 100%; left: 0; width: 260px; background: var(--white); border-radius: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); padding: 0.75rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); z-index: 100; }
+/* Fixed Z-Index Dropdown Layering */
+.dropdown-menu { position: absolute; top: 100%; left: 0; width: 260px; background: var(--white); border-radius: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.75rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); border: 1px solid rgba(0,0,0,0.08); z-index: 10000; }
 .nav-links > li:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown-menu li a { padding: 0.6rem 1.5rem; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); border-left: 3px solid transparent; }
+.dropdown-menu li a { padding: 0.6rem 1.5rem; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); border-left: 3px solid transparent; display: block; }
 .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); border-left-color: var(--accent-green); padding-left: 1.75rem; }
 
 .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
@@ -70,7 +73,7 @@ nav { display: flex; justify-content: space-between; align-items: center; height
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
-.card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.03); }
+.card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.03); height: 100%; }
 .card:hover { transform: translateY(-5px); box-shadow: var(--hover-shadow); }
 
 /* Footer */
@@ -88,7 +91,7 @@ footer { background: #05192d; color: var(--white); padding: 4rem 0 2rem; margin-
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-    .nav-links { position: fixed; top: 90px; left: -100%; width: 100%; height: calc(100vh - 90px); background: var(--white); flex-direction: column; justify-content: flex-start; padding-top: 2.5rem; gap: 1.25rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
+    .nav-links { position: fixed; top: 90px; left: -100%; width: 100%; height: calc(100vh - 90px); background: var(--white); flex-direction: column; justify-content: flex-start; padding-top: 2.5rem; gap: 1.25rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05); z-index: 9999; }
     .nav-links.active { left: 0; }
     .nav-links > li { width: 100%; text-align: center; }
     .dropdown-menu { position: static; width: 90%; margin: 0.5rem auto 0; box-shadow: none; border: 1px solid rgba(0,0,0,0.1); display: none; }
