@@ -18,6 +18,14 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
+        
+        /* Top Announcement Bar */
+        .top-bar { background: #05192d; color: #cbd5e1; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .top-bar span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); transition: var(--transition); margin-left: 0.5rem; }
+        .social-icons a:hover { background: var(--accent-green); transform: translateY(-2px); }
+
         header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
         .logo-container { display: flex; align-items: center; gap: 0.8rem; }
@@ -33,16 +41,54 @@
         .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
         .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
         .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
+        
         .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
         .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
         .section-padding { padding: 5rem 0; }
+        
+        /* Partner Layouts */
+        .flagship-partner { background: var(--white); border-radius: 24px; box-shadow: var(--card-shadow); border-top: 6px solid var(--primary-blue); padding: 3.5rem; margin-bottom: 5rem; }
+        .logo-row { display: flex; align-items: center; gap: 2.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .partner-logo { max-height: 90px; object-fit: contain; }
+        .partner-list { padding-left: 1.5rem; margin: 1.5rem 0; }
+        .partner-list li { margin-bottom: 0.75rem; color: var(--text-muted); position: relative; }
+        .partner-list li::before { content: '★'; position: absolute; left: -1.5rem; color: var(--accent-gold); }
+        
+        .recommendation-box { background: var(--emerald-light); border-left: 5px solid var(--accent-green); padding: 2rem; border-radius: 0 16px 16px 0; margin-top: 2.5rem; }
+        
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
-        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
-        @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+        
+        /* Comprehensive Footer */
+        footer { background: #05192d; color: var(--white); padding: 4.5rem 0 2rem; border-top: 4px solid var(--accent-green); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3.5rem; margin-bottom: 3.5rem; }
+        .footer-about p { color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; max-width: 330px; line-height: 1.6; }
+        .footer-links h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+        .footer-links ul li { margin-bottom: 0.65rem; }
+        .footer-links ul li a { color: #94a3b8; font-size: 0.9rem; }
+        .footer-links ul li a:hover { color: var(--accent-green); padding-left: 5px; }
+        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem; align-items: flex-start; line-height: 1.5; }
+        .footer-contact li i { color: var(--accent-green); margin-top: 4px; }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+
+        @media (max-width: 900px) { .grid-3, .footer-grid { grid-template-columns: 1fr; } .flagship-partner { padding: 2rem; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
     </style>
 </head>
 <body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <span><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> +91 8763457103</span>
+                <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> srmssodisha@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -82,10 +128,42 @@
 
     <section class="section-padding">
         <div class="container">
+            
+            <div class="flagship-partner">
+                <span class="badge" style="background: var(--gold-light); color: var(--accent-gold);">Flagship Institutional Partner</span>
+                
+                <div class="logo-row">
+                    <img src="52451.jpg" alt="MPEDA Logo" class="partner-logo" onerror="this.src='https://via.placeholder.com/250x90/ffffff/0b2c4d?text=MPEDA'">
+                    <img src="52452.jpg" alt="NETFISH Logo" class="partner-logo" onerror="this.src='https://via.placeholder.com/200x90/ffffff/107c41?text=NETFISH'">
+                </div>
+
+                <h2>Network for Fish Quality Management & Sustainable Fishing (NETFISH)</h2>
+                <h4 style="color: var(--text-muted); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; margin-bottom: 1.5rem;">(MPEDA, Ministry of Commerce & Industry, Government of India)</h4>
+                
+                [span_0](start_span)<p style="color: var(--text-muted); font-size: 1.05rem;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a proud implementing NGO partner and national level network member (Reg. No. 2) for the Network for Fish Quality Management and Sustainable Fishing (NETFISH)[span_0](end_span). [span_1](start_span)[span_2](start_span)Our strategic partnership has been established since 2008, representing over 15 years of dedicated collaboration in sustainable coastal development[span_1](end_span)[span_2](end_span).</p>
+                
+                [span_3](start_span)[span_4](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Working alongside Panchayati Raj Institutions (PRIs), local governments, and line departments across Odisha—primarily in Balasore, Jagatsinghpur, and Bhadrak—SRMSS executes critical programmes with annual financial assistance from NETFISH[span_3](end_span)[span_4](end_span).</p>
+
+                <h3 style="margin-top: 2rem; font-size: 1.4rem;">Core Collaborative Programmes</h3>
+                <ul class="partner-list">
+                    [span_5](start_span)[span_6](start_span)<li><strong>Capacity Building:</strong> Training fisher communities, PRIs, and government officials on sustainable fisheries management, coastal governance, and fish quality management[span_5](end_span)[span_6](end_span).</li>
+                    [span_7](start_span)[span_8](start_span)[span_9](start_span)<li><strong>Conservation:</strong> Educating stakeholders to protect endangered species, adopt sustainable fishery practices, and maintain vital marine ecosystem balance[span_7](end_span)[span_8](end_span)[span_9](end_span).</li>
+                    [span_10](start_span)[span_11](start_span)<li><strong>Coastal Livelihoods:</strong> Promoting fishery-based sustainable livelihoods, allied agriculture practices, skill development for income generation, and facilitating market linkages[span_10](end_span)[span_11](end_span).</li>
+                    [span_12](start_span)<li><strong>Community Resilience:</strong> Implementing comprehensive disaster preparedness and recovery activities to minimize natural disaster impacts on coastal communities[span_12](end_span).</li>
+                    [span_13](start_span)<li><strong>Cross-Cutting Development:</strong> Addressing holistic community needs including health, nutrition, hygiene, education, and women empowerment[span_13](end_span).</li>
+                </ul>
+
+                <div class="recommendation-box">
+                    <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;"><i class="fa-solid fa-certificate"></i> Official Letter of Recommendation</h4>
+                    [span_14](start_span)<p style="color: var(--primary-blue); font-style: italic; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">"We experienced that the organization operates with great accountability, transparency, and credibility; adhering to government guidelines at all levels while implementing the programmes[span_14](end_span). [span_15](start_span)NETFISH strongly recommends the government, donor agencies, and other institutions provide financial assistance to SRMSS... Their professionalism, expertise, and dedication make them an ideal partner for any agency[span_15](end_span)."</p>
+                    [span_16](start_span)<p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">— Dr. Joice V Thomas, Chief Executive, NETFISH (MPEDA)[span_16](end_span)</p>
+                </div>
+            </div>
+
             <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-                <span class="badge">Collective Impact</span>
+                <span class="badge">Broader Network</span>
                 <h2>Working Hand-in-Hand With Stakeholders</h2>
-                <p style="color: var(--text-muted);">Over the years, SRMSS has been closely working with communities, women groups, government departments, PRIs, and development agencies to address local issues through practical and community-driven initiatives.</p>
+                <p style="color: var(--text-muted);">In addition to our flagship institutional partners, SRMSS closely collaborates with local communities, PRIs, and development agencies to address issues through practical, grassroots initiatives.</p>
             </div>
 
             <div class="grid-3">
@@ -109,8 +187,65 @@
     </section>
 
     <footer>
-        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
+                    <p>Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook Page" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn Profile" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="where-we-work.html">Where We Work</a></li>
+                        <li><a href="partners.html">Our Partners</a></li>
+                        <li><a href="legal-status.html">Legal Status</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
+                        <li><a href="work.html#women">Women Empowerment</a></li>
+                        <li><a href="work.html#coastal">Horseshoe Crab Protection</a></li>
+                        <li><a href="work.html#disaster">Disaster Preparedness</a></li>
+                        <li><a href="work.html#wash">WASH Initiatives</a></li>
+                        <li><a href="work.html#health">Community Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact & Statutory</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
+                        <li><i class="fa-solid fa-file-shield"></i> <span>Societies Registration Act, 1860</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. All Rights Reserved.</p>
+                <p>Empowering Communities, Protecting Nature, Transforming Lives.</p>
+            </div>
+        </div>
     </footer>
-    <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
+
+    <script>
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+            const icon = document.getElementById('mobileToggle').querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>
