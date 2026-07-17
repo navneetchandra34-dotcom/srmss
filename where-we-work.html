@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where We Work | SRMSS</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-blue: #0b2c4d; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
+        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
+        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
+        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
+        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
+        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
+        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
+        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
+        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
+        .section-padding { padding: 5rem 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
+        footer { background: #05192d; color: #94a3b8; padding: 3rem 0; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-green); }
+        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+    </style>
 </head>
 <body>
     <header>
@@ -13,57 +48,54 @@
             <nav>
                 <a href="index.html" class="logo-container">
                     <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
-                    <div class="logo-text"><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
+                    <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="work.html">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a></li>
+                    <li class="dropdown"><a href="work.html">Our Work ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
+                            <li><a href="work.html#women">Women Empowerment</a></li>
+                            <li><a href="work.html#coastal">Coastal Conservation</a></li>
+                            <li><a href="work.html#disaster">Disaster Preparedness</a></li>
+                            <li><a href="work.html#wash">WASH Initiatives</a></li>
+                            <li><a href="work.html#health">Community Health</a></li>
+                        </ul>
+                    </li>
                     <li><a href="where-we-work.html" class="active">Where We Work</a></li>
                     <li><a href="partners.html">Our Partners</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn btn-primary" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
         </div>
     </header>
 
-    <div class="page-banner">
+    <div class="banner">
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Geographic Footprint</span>
             <h1>Where We Work</h1>
-            [span_127](start_span)[span_128](start_span)<p>Expanding across several districts of Odisha to serve rural and coastal communities with strong grassroots commitment[span_127](end_span)[span_128](end_span).</p>
+            <p>Expanding across several districts of Odisha with strong grassroots commitment.</p>
         </div>
     </div>
 
     <section class="section-padding">
         <div class="container">
-            <div class="grid-2" style="margin-bottom: 4rem;">
+            <div class="grid-2">
                 <div>
                     <span class="badge">Odisha, India</span>
                     <h2>Dedicated to Vulnerable Communities</h2>
-                    [span_129](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Since its inception in 2007 in Odisha, Subha Rashmi Mahila Seva Samiti has been working with rural and coastal communities to improve livelihoods, conserve natural resources, strengthen local institutions, and increase access to basic services for vulnerable households[span_129](end_span).</p>
-                    [span_130](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Over the years, the organization has expanded its work across several districts of Odisha while strictly maintaining its strong grassroots presence[span_130](end_span). [span_131](start_span)[span_132](start_span)Our work directly targets underserved populations facing geographic isolation, climate vulnerability, and economic challenges[span_131](end_span)[span_132](end_span).</p>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Since its inception in 2007 in Odisha, Subha Rashmi Mahila Seva Samiti has been working with rural and coastal communities to improve livelihoods, conserve natural resources, strengthen local institutions, and increase access to basic services for vulnerable households.</p>
+                    <p style="color: var(--text-muted);">Over the years, the organization has expanded its work across several districts of Odisha while strictly maintaining its strong grassroots presence. Our work directly targets underserved populations facing geographic isolation, climate vulnerability, and economic challenges.</p>
                 </div>
                 <div class="card" style="background: var(--primary-blue); color: var(--white);">
                     <h3 style="color: var(--white); margin-bottom: 1.5rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--accent-gold);"></i> Core Operational Landscapes</h3>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
-                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i>
-                            [span_133](start_span)[span_134](start_span)<span><strong>Coastal Fishing Villages:</strong> Supporting traditional fishing communities along the Odisha coastline with sustainable fisheries management[span_133](end_span)[span_134](end_span).</span>
-                        </li>
-                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i>
-                            [span_135](start_span)[span_136](start_span)[span_137](start_span)<span><strong>Intertidal & Estuarine Habitats:</strong> Protecting critical spawning and breeding grounds for endangered marine species like *Tachypleus gigas* along beaches and riverbanks[span_135](end_span)[span_136](end_span)[span_137](end_span).</span>
-                        </li>
-                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i>
-                            [span_138](start_span)[span_139](start_span)<span><strong>Salinity-Prone Communities:</strong> Addressing water contamination, salinity intrusion, and flooding through climate-resilient WASH infrastructure[span_138](end_span)[span_139](end_span).</span>
-                        </li>
-                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i>
-                            [span_140](start_span)[span_141](start_span)<span><strong>Rural & Underserved Villages:</strong> Empowering women's Self-Help Groups (SHGs) and bringing primary healthcare screening closer to remote households[span_140](end_span)[span_141](end_span).</span>
-                        </li>
+                    <ul style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Coastal Fishing Villages:</strong> Supporting traditional fishing communities along the Odisha coastline with sustainable fisheries management.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Intertidal & Estuarine Habitats:</strong> Protecting critical spawning grounds for endangered marine species like <em>Tachypleus gigas</em> along beaches and riverbanks.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Salinity-Prone Communities:</strong> Addressing water contamination, salinity intrusion, and flooding through climate-resilient WASH infrastructure.</span></li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-check" style="color: #4ade80; margin-top: 4px;"></i><span><strong>Rural & Underserved Villages:</strong> Empowering women's Self-Help Groups (SHGs) and bringing healthcare screening closer to remote households.</span></li>
                     </ul>
                 </div>
             </div>
@@ -71,17 +103,8 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-bottom" style="border: none; padding: 0;">
-                <p>&copy; 2026 SRMSS. [span_142](start_span)Established by Late Jyotna Rani Jena[span_142](end_span).</p>
-                <p><a href="index.html">Home</a> | <a href="partners.html">Our Partners</a> | <a href="contact.html">Contact Us</a></p>
-            </div>
-        </div>
+        <div class="container"><p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. Registered under Societies Registration Act, 1860, Odisha.</p></div>
     </footer>
-    <script>
-        document.getElementById('mobileToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-    </script>
+    <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
 </html>
