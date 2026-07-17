@@ -9,73 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-blue: #0b2c4d; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.5rem; }
-        
-        /* Top Announcement Bar */
-        .top-bar { background: #05192d; color: #cbd5e1; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-        .top-bar span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); transition: var(--transition); margin-left: 0.5rem; }
-        .social-icons a:hover { background: var(--accent-green); transform: translateY(-2px); }
-
-        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
-        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
-        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
-        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links li { position: relative; }
-        .nav-links a { font-weight: 600; font-size: 0.9rem; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 1001; }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
-        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
-        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
-        
-        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
-        .banner h1 { color: var(--white); font-size: 3rem; margin-bottom: 1rem; }
-        .section-padding { padding: 5rem 0; }
-        
-        /* Partner Layouts */
-        .flagship-partner { background: var(--white); border-radius: 24px; box-shadow: var(--card-shadow); border-top: 6px solid var(--primary-blue); padding: 3.5rem; margin-bottom: 5rem; }
-        .logo-row { display: flex; align-items: center; gap: 2.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-        .partner-logo { max-height: 90px; object-fit: contain; }
+        :root{--primary-blue:#0b2c4d;--secondary-blue:#164273;--accent-green:#107c41;--emerald-light:#e6f4ed;--accent-gold:#f59e0b;--gold-light:#fef3c7;--text-dark:#1e293b;--text-muted:#64748b;--bg-light:#f8fafc;--white:#ffffff;--card-shadow:0 10px 25px -5px rgba(0,0,0,0.08);--transition:all 0.3s ease}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--bg-light);line-height:1.65;overflow-x:hidden}h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;color:var(--primary-blue);line-height:1.25}a{text-decoration:none;color:inherit;transition:var(--transition)}ul{list-style:none}.container{max-width:1240px;margin:0 auto;padding:0 2rem}.badge{display:inline-block;padding:.45rem 1.15rem;background:var(--emerald-light);color:var(--accent-green);border-radius:50px;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.85rem;border-radius:50px;font-weight:600;background:var(--accent-green);color:var(--white);gap:.6rem;border:none;cursor:pointer;transition:.3s}.btn:hover{background:#0c6333;transform:translateY(-2px);box-shadow:0 6px 16px rgba(16,124,65,.3)}.top-bar{background:#05192d;color:#cbd5e1;font-size:.85rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08)}.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.top-bar span{display:inline-flex;align-items:center;gap:.5rem}.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--white);margin-left:.5rem;transition:.3s}.social-icons a:hover{background:var(--accent-green);transform:translateY(-2px)}header{position:sticky;top:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);z-index:10000;box-shadow:0 4px 10px rgba(0,0,0,.05)}nav{display:flex;justify-content:space-between;align-items:center;height:85px}.logo-container{display:flex;align-items:center;gap:.8rem}.logo-img{width:50px;height:50px;border-radius:50%;object-fit:contain;background:var(--white)}.logo-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--primary-blue);line-height:1}.logo-subtitle{font-size:.65rem;color:var(--accent-green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:block;margin-top:4px}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links li{position:relative}.nav-links a{font-weight:600;font-size:.9rem}.nav-links a:hover,.nav-links a.active{color:var(--accent-green)}.dropdown-menu{position:absolute;top:100%;left:0;width:240px;background:var(--white);border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,.15);padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--transition);z-index:10001}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li a{padding:.6rem 1.2rem;display:block;font-size:.85rem;color:var(--text-muted)}.dropdown-menu li a:hover{background:var(--bg-light);color:var(--accent-green)}.mobile-toggle{display:none;font-size:1.5rem;cursor:pointer;color:var(--primary-blue)}.banner{background:linear-gradient(135deg,#0f335c,#05192d);color:var(--white);padding:6rem 0 4rem;text-align:center}.banner h1{font-size:3.2rem;margin-bottom:1.2rem;color:white}.section-padding{padding:5rem 0}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.card{background:var(--white);padding:2.5rem;border-radius:20px;box-shadow:var(--card-shadow);transition:.3s;border-top:4px solid var(--primary-blue)}footer{background:#05192d;color:var(--white);padding:4.5rem 0 2rem;border-top:4px solid var(--accent-green)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3.5rem;margin-bottom:3.5rem}.footer-links h4{color:var(--white);font-size:1.1rem;margin-bottom:1.25rem}.footer-links ul li a{color:#94a3b8;font-size:.9rem;transition:.3s}.footer-links ul li a:hover{color:var(--accent-green)}.footer-contact li{display:flex;gap:.8rem;color:#94a3b8;margin-bottom:1rem;font-size:.9rem;line-height:1.5}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;text-align:center;color:#64748b;font-size:.85rem}
+        /* Specific Partner Styles */
+        .flagship-partner { background: var(--white); border-radius: 24px; box-shadow: var(--card-shadow); border-top: 6px solid var(--primary-blue); padding: 4rem; margin-bottom: 5rem; }
+        .logo-row { display: flex; align-items: center; gap: 3rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .partner-logo { max-height: 100px; object-fit: contain; }
         .partner-list { padding-left: 1.5rem; margin: 1.5rem 0; }
-        .partner-list li { margin-bottom: 0.75rem; color: var(--text-muted); position: relative; }
+        .partner-list li { margin-bottom: 1rem; color: var(--text-muted); position: relative; font-size: 1.05rem; }
         .partner-list li::before { content: '★'; position: absolute; left: -1.5rem; color: var(--accent-gold); }
-        
         .recommendation-box { background: var(--emerald-light); border-left: 5px solid var(--accent-green); padding: 2rem; border-radius: 0 16px 16px 0; margin-top: 2.5rem; }
-        
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
-        
-        /* Comprehensive Footer */
-        footer { background: #05192d; color: var(--white); padding: 4.5rem 0 2rem; border-top: 4px solid var(--accent-green); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3.5rem; margin-bottom: 3.5rem; }
-        .footer-about p { color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; max-width: 330px; line-height: 1.6; }
-        .footer-links h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-        .footer-links ul li { margin-bottom: 0.65rem; }
-        .footer-links ul li a { color: #94a3b8; font-size: 0.9rem; }
-        .footer-links ul li a:hover { color: var(--accent-green); padding-left: 5px; }
-        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem; align-items: flex-start; line-height: 1.5; }
-        .footer-contact li i { color: var(--accent-green); margin-top: 4px; }
-        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-
-        @media (max-width: 900px) { .grid-3, .footer-grid { grid-template-columns: 1fr; } .flagship-partner { padding: 2rem; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown:hover .dropdown-menu { display: block; position: static; box-shadow: none; } }
+        @media (max-width: 1024px) { .grid-3, .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .grid-3, .footer-grid { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); z-index: 99999; } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown-menu { position: static; box-shadow: none; display: none; } .dropdown:hover .dropdown-menu { display: block; } .flagship-partner { padding: 2rem; } .banner { padding: 4rem 0 2rem; } }
     </style>
 </head>
 <body>
-
     <div class="top-bar">
         <div class="container">
             <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
@@ -83,8 +30,8 @@
                 <span><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> srmssodisha@gmail.com</span>
             </div>
             <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -93,12 +40,12 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="logo-container">
-                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50/0b2c4d/ffffff?text=SRMSS'">
+                    <img src="IMG-20260717-WA0000.jpg" alt="SRMSS Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50'">
                     <div><span class="logo-title">SRMSS</span><span class="logo-subtitle">Etd 2007</span></div>
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown"><a href="work.html">Our Work ▾</a>
+                    <li class="dropdown"><a href="work.html">Our Work <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
                             <li><a href="work.html#women">Women Empowerment</a></li>
@@ -110,8 +57,10 @@
                     </li>
                     <li><a href="where-we-work.html">Where We Work</a></li>
                     <li><a href="partners.html" class="active">Our Partners</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="legal-status.html">Legal Status</a></li>
-                    <li><a href="contact.html" class="btn" style="color:white;">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="donate.html" class="btn btn-primary" style="color:white; padding: 0.6rem 1.4rem;">Donate</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
             </nav>
@@ -122,7 +71,7 @@
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Collaborative Network</span>
             <h1>Our Partners</h1>
-            <p>Advancing inclusive development through strong multi-stakeholder partnerships.</p>
+            <p style="color: #cbd5e1; font-size: 1.15rem;">Advancing inclusive development through strong multi-stakeholder partnerships.</p>
         </div>
     </div>
 
@@ -137,49 +86,47 @@
                     <img src="52452.jpg" alt="NETFISH Logo" class="partner-logo" onerror="this.src='https://via.placeholder.com/200x90/ffffff/107c41?text=NETFISH'">
                 </div>
 
-                <h2>Network for Fish Quality Management & Sustainable Fishing (NETFISH)</h2>
-                <h4 style="color: var(--text-muted); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; margin-bottom: 1.5rem;">(MPEDA, Ministry of Commerce & Industry, Government of India)</h4>
+                <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Network for Fish Quality Management & Sustainable Fishing (NETFISH)</h2>
+                <h4 style="color: var(--text-muted); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; margin-bottom: 2rem; font-size: 1.15rem;">(MPEDA, Ministry of Commerce & Industry, Government of India)</h4>
                 
-                [span_0](start_span)<p style="color: var(--text-muted); font-size: 1.05rem;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a proud implementing NGO partner and national level network member (Reg. No. 2) for the Network for Fish Quality Management and Sustainable Fishing (NETFISH)[span_0](end_span). [span_1](start_span)[span_2](start_span)Our strategic partnership has been established since 2008, representing over 15 years of dedicated collaboration in sustainable coastal development[span_1](end_span)[span_2](end_span).</p>
-                
-                [span_3](start_span)[span_4](start_span)<p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Working alongside Panchayati Raj Institutions (PRIs), local governments, and line departments across Odisha—primarily in Balasore, Jagatsinghpur, and Bhadrak—SRMSS executes critical programmes with annual financial assistance from NETFISH[span_3](end_span)[span_4](end_span).</p>
+                <p style="color: var(--text-muted); font-size: 1.05rem;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a proud implementing NGO partner and national level network member (Reg. No. 2) for the Network for Fish Quality Management and Sustainable Fishing (NETFISH). Our strategic partnership has been established since 2008, representing over 15 years of dedicated collaboration in sustainable coastal development.</p>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 1rem;">Working alongside Panchayati Raj Institutions (PRIs), local governments, and line departments across Odisha—primarily in Balasore, Jagatsinghpur, and Bhadrak—SRMSS executes critical programmes with annual financial assistance from NETFISH.</p>
 
-                <h3 style="margin-top: 2rem; font-size: 1.4rem;">Core Collaborative Programmes</h3>
+                <h3 style="margin-top: 2.5rem; font-size: 1.6rem;">Core Collaborative Programmes</h3>
                 <ul class="partner-list">
-                    [span_5](start_span)[span_6](start_span)<li><strong>Capacity Building:</strong> Training fisher communities, PRIs, and government officials on sustainable fisheries management, coastal governance, and fish quality management[span_5](end_span)[span_6](end_span).</li>
-                    [span_7](start_span)[span_8](start_span)[span_9](start_span)<li><strong>Conservation:</strong> Educating stakeholders to protect endangered species, adopt sustainable fishery practices, and maintain vital marine ecosystem balance[span_7](end_span)[span_8](end_span)[span_9](end_span).</li>
-                    [span_10](start_span)[span_11](start_span)<li><strong>Coastal Livelihoods:</strong> Promoting fishery-based sustainable livelihoods, allied agriculture practices, skill development for income generation, and facilitating market linkages[span_10](end_span)[span_11](end_span).</li>
-                    [span_12](start_span)<li><strong>Community Resilience:</strong> Implementing comprehensive disaster preparedness and recovery activities to minimize natural disaster impacts on coastal communities[span_12](end_span).</li>
-                    [span_13](start_span)<li><strong>Cross-Cutting Development:</strong> Addressing holistic community needs including health, nutrition, hygiene, education, and women empowerment[span_13](end_span).</li>
+                    <li><strong>Capacity Building:</strong> Training fisher communities, PRIs, and government officials on sustainable fisheries management, coastal governance, and fish quality management.</li>
+                    <li><strong>Conservation:</strong> Educating stakeholders to protect endangered species, adopt sustainable fishery practices, and maintain vital marine ecosystem balance.</li>
+                    <li><strong>Coastal Livelihoods:</strong> Promoting fishery-based sustainable livelihoods, allied agriculture practices, skill development for income generation, and facilitating market linkages.</li>
+                    <li><strong>Community Resilience:</strong> Implementing comprehensive disaster preparedness and recovery activities to minimize natural disaster impacts on coastal communities.</li>
                 </ul>
 
                 <div class="recommendation-box">
-                    <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;"><i class="fa-solid fa-certificate"></i> Official Letter of Recommendation</h4>
-                    [span_14](start_span)<p style="color: var(--primary-blue); font-style: italic; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">"We experienced that the organization operates with great accountability, transparency, and credibility; adhering to government guidelines at all levels while implementing the programmes[span_14](end_span). [span_15](start_span)NETFISH strongly recommends the government, donor agencies, and other institutions provide financial assistance to SRMSS... Their professionalism, expertise, and dedication make them an ideal partner for any agency[span_15](end_span)."</p>
-                    [span_16](start_span)<p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">— Dr. Joice V Thomas, Chief Executive, NETFISH (MPEDA)[span_16](end_span)</p>
+                    <h4 style="color: var(--accent-green); margin-bottom: 0.5rem; font-size: 1.2rem;"><i class="fa-solid fa-certificate"></i> Official Letter of Recommendation</h4>
+                    <p style="color: var(--primary-blue); font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">"We experienced that the organization operates with great accountability, transparency, and credibility; adhering to government guidelines at all levels while implementing the programmes. NETFISH strongly recommends the government, donor agencies, and other institutions provide financial assistance to SRMSS... Their professionalism, expertise, and dedication make them an ideal partner for any agency."</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 700;">— Dr. Joice V Thomas, Chief Executive, NETFISH (MPEDA)</p>
                 </div>
             </div>
 
             <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
                 <span class="badge">Broader Network</span>
-                <h2>Working Hand-in-Hand With Stakeholders</h2>
-                <p style="color: var(--text-muted);">In addition to our flagship institutional partners, SRMSS closely collaborates with local communities, PRIs, and development agencies to address issues through practical, grassroots initiatives.</p>
+                <h2 style="font-size: 2.4rem; margin-bottom: 1rem;">Working Hand-in-Hand With Stakeholders</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem;">In addition to our flagship institutional partners, SRMSS closely collaborates with local communities, PRIs, and development agencies to address issues through practical, grassroots initiatives.</p>
             </div>
 
             <div class="grid-3">
                 <div class="card" style="border-top: 4px solid var(--primary-blue);">
-                    <i class="fa-solid fa-users-line" style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
-                    <h3>Community Institutions & SHGs</h3>
+                    <i class="fa-solid fa-users-line" style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem;">Community Institutions & SHGs</h3>
                     <p style="color: var(--text-muted); margin-top: 0.5rem;">We collaborate directly with traditional fisher groups, women's Self-Help Groups (SHGs), and Village Disaster Management Committees to foster participatory local governance and ownership.</p>
                 </div>
                 <div class="card" style="border-top: 4px solid var(--accent-green);">
-                    <i class="fa-solid fa-landmark" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
-                    <h3>Government & PRIs</h3>
+                    <i class="fa-solid fa-landmark" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem;">Government & PRIs</h3>
                     <p style="color: var(--text-muted); margin-top: 0.5rem;">Partnering with government health departments, local authorities, and Panchayati Raj Institutions (PRIs) to improve access to welfare schemes, health referral networks, and WASH services.</p>
                 </div>
                 <div class="card" style="border-top: 4px solid var(--accent-gold);">
-                    <i class="fa-solid fa-microscope" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
-                    <h3>Academic & Research Bodies</h3>
+                    <i class="fa-solid fa-microscope" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem;">Academic & Research</h3>
                     <p style="color: var(--text-muted); margin-top: 0.5rem;">Working closely with educational institutions, scientific researchers, and conservation partners to conduct habitat mapping, biodiversity monitoring, and horseshoe crab protection.</p>
                 </div>
             </div>
@@ -189,63 +136,37 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
+                <div>
                     <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
-                    <p>Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
-                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                        <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook Page" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn Profile" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; line-height: 1.6;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="work.html">Our Work</a></li>
-                        <li><a href="where-we-work.html">Where We Work</a></li>
-                        <li><a href="partners.html">Our Partners</a></li>
-                        <li><a href="legal-status.html">Legal Status</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="legal-status.html">Legal Status</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="donate.html">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Programmes</h4>
                     <ul>
-                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li>
-                        <li><a href="work.html#women">Women Empowerment</a></li>
-                        <li><a href="work.html#coastal">Horseshoe Crab Protection</a></li>
-                        <li><a href="work.html#disaster">Disaster Preparedness</a></li>
-                        <li><a href="work.html#wash">WASH Initiatives</a></li>
-                        <li><a href="work.html#health">Community Health</a></li>
+                        <li><a href="work.html#fisheries">Sustainable Fisheries</a></li><li><a href="work.html#women">Women Empowerment</a></li><li><a href="work.html#coastal">Horseshoe Crab Protection</a></li><li><a href="work.html#disaster">Disaster Preparedness</a></li><li><a href="work.html#wash">WASH Initiatives</a></li><li><a href="work.html#health">Community Health</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact & Statutory</h4>
                     <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
-                        <li><i class="fa-solid fa-envelope"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
-                        <li><i class="fa-solid fa-phone"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
-                        <li><i class="fa-solid fa-file-shield"></i> <span>Societies Registration Act, 1860</span></li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--accent-green);"></i> <span>At. Ranipatna, Po. Nayabazar, Dist. Baleshwar, Odisha 756001, India</span></li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-green);"></i> <span>srmssodisha@gmail.com<br>srmss@rediffmail.com</span></li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <span>+91 8763457103<br>+91 9437989271</span></li>
+                        <li><i class="fa-solid fa-file-shield" style="color: var(--accent-green);"></i> <span>Societies Registration Act, 1860</span></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 SRMSS. Established by Late Jyotna Rani Jena. All Rights Reserved.</p>
-                <p>Empowering Communities, Protecting Nature, Transforming Lives.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('mobileToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-            const icon = document.getElementById('mobileToggle').querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            }
-        });
-    </script>
+    <script>document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });</script>
 </body>
 </html>
