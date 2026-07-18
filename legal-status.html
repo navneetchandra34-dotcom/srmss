@@ -9,7 +9,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root{--primary-blue:#0b2c4d;--secondary-blue:#164273;--accent-green:#107c41;--emerald-light:#e6f4ed;--accent-gold:#f59e0b;--gold-light:#fef3c7;--text-dark:#1e293b;--text-muted:#64748b;--bg-light:#f8fafc;--white:#ffffff;--card-shadow:0 10px 25px -5px rgba(0,0,0,0.08);--transition:all 0.3s ease}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--bg-light);line-height:1.65;overflow-x:hidden}h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;color:var(--primary-blue);line-height:1.25}a{text-decoration:none;color:inherit;transition:var(--transition)}ul{list-style:none}.container{max-width:1240px;margin:0 auto;padding:0 2rem}.badge{display:inline-block;padding:.45rem 1.15rem;background:var(--emerald-light);color:var(--accent-green);border-radius:50px;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.85rem;border-radius:50px;font-weight:600;background:var(--accent-green);color:var(--white);gap:.6rem;border:none;cursor:pointer;transition:.3s}.btn:hover{background:#0c6333;transform:translateY(-2px);box-shadow:0 6px 16px rgba(16,124,65,.3)}.top-bar{background:#05192d;color:#cbd5e1;font-size:.85rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08)}.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}.top-bar span{display:inline-flex;align-items:center;gap:.5rem}.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--white);margin-left:.5rem;transition:.3s}.social-icons a:hover{background:var(--accent-green);transform:translateY(-2px)}header{position:sticky;top:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);z-index:10000;box-shadow:0 4px 10px rgba(0,0,0,.05)}nav{display:flex;justify-content:space-between;align-items:center;height:85px}.logo-container{display:flex;align-items:center;gap:.8rem}.logo-img{width:50px;height:50px;border-radius:50%;object-fit:contain;background:var(--white)}.logo-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--primary-blue);line-height:1}.logo-subtitle{font-size:.65rem;color:var(--accent-green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:block;margin-top:4px}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links li{position:relative}.nav-links a{font-weight:600;font-size:.9rem}.nav-links a:hover,.nav-links a.active{color:var(--accent-green)}.dropdown-menu{position:absolute;top:100%;left:0;width:240px;background:var(--white);border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,.15);padding:.5rem 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--transition);z-index:10001}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li a{padding:.6rem 1.2rem;display:block;font-size:.85rem;color:var(--text-muted)}.dropdown-menu li a:hover{background:var(--bg-light);color:var(--accent-green)}.mobile-toggle{display:none;font-size:1.5rem;cursor:pointer;color:var(--primary-blue)}.banner{background:linear-gradient(135deg,#0f335c,#05192d);color:var(--white);padding:6rem 0 4rem;text-align:center}.banner h1{font-size:3.2rem;margin-bottom:1.2rem;color:white}.section-padding{padding:5rem 0}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.card{background:var(--white);padding:2.5rem;border-radius:20px;box-shadow:var(--card-shadow);transition:.3s;border-top:5px solid var(--primary-blue)}footer{background:#05192d;color:var(--white);padding:4.5rem 0 2rem;border-top:4px solid var(--accent-green)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3.5rem;margin-bottom:3.5rem}.footer-links h4{color:var(--white);font-size:1.1rem;margin-bottom:1.25rem}.footer-links ul li a{color:#94a3b8;font-size:.9rem;transition:.3s}.footer-links ul li a:hover{color:var(--accent-green)}.footer-contact li{display:flex;gap:.8rem;color:#94a3b8;margin-bottom:1rem;font-size:.9rem;line-height:1.5}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;text-align:center;color:#64748b;font-size:.85rem}@media (max-width:1024px){.grid-2,.footer-grid{grid-template-columns:1fr 1fr}}@media (max-width:768px){.grid-2,.footer-grid{grid-template-columns:1fr}.nav-links{position:fixed;top:85px;left:-100%;width:100%;height:calc(100vh - 85px);background:var(--white);flex-direction:column;padding-top:2rem;transition:var(--transition);z-index:99999}.nav-links.active{left:0}.mobile-toggle{display:block}.dropdown-menu{position:static;box-shadow:none;display:none}.dropdown:hover .dropdown-menu{display:block}.banner{padding:4rem 0 2rem}}
+        :root { --primary-blue: #0b2c4d; --secondary-blue: #164273; --accent-green: #107c41; --emerald-light: #e6f4ed; --accent-gold: #f59e0b; --gold-light: #fef3c7; --text-dark: #1e293b; --text-muted: #64748b; --bg-light: #f8fafc; --white: #ffffff; --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.65; overflow-x: hidden; }
+        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary-blue); line-height: 1.25; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+        .badge { display: inline-block; padding: 0.45rem 1.15rem; background: var(--emerald-light); color: var(--accent-green); border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.85rem; border-radius: 50px; font-weight: 600; background: var(--accent-green); color: var(--white); gap: 0.6rem; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #0c6333; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(16,124,65,0.3); }
+        .top-bar { background: #05192d; color: #cbd5e1; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .top-bar span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); margin-left: 0.5rem; transition: 0.3s; }
+        .social-icons a:hover { background: var(--accent-green); transform: translateY(-2px); }
+        header { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 10000; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 85px; }
+        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--white); }
+        .logo-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); line-height: 1; }
+        .logo-subtitle { font-size: 0.65rem; color: var(--accent-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-top: 4px; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 240px; background: var(--white); border-radius: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 10001; }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li a { padding: 0.6rem 1.2rem; display: block; font-size: 0.85rem; color: var(--text-muted); }
+        .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green); }
+        .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-blue); }
+        .banner { background: linear-gradient(135deg, #0f335c, #05192d); color: var(--white); padding: 6rem 0 4rem; text-align: center; }
+        .banner h1 { font-size: 3.2rem; margin-bottom: 1.2rem; color: white; }
+        .section-padding { padding: 5rem 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); transition: 0.3s; }
+        
+        /* Specialized Buttons for Download Reports */
+        .btn-download { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.5rem; border-radius: 8px; border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; font-weight: 700; font-size: 0.9rem; transition: var(--transition); text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-download:hover { background: var(--primary-blue); color: var(--white); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(11, 44, 77, 0.2); }
+        
+        .list-compliance { padding-left: 0; list-style: none; margin-top: 1.5rem; }
+        .list-compliance li { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; font-size: 1rem; color: var(--text-muted); border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.75rem; }
+        .list-compliance li:last-child { border-bottom: none; }
+        .list-compliance li i { color: var(--accent-green); font-size: 1.2rem; margin-top: 4px; }
+        .list-compliance li strong { color: var(--text-dark); display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; }
+
+        footer { background: #05192d; color: var(--white); padding: 4.5rem 0 2rem; border-top: 4px solid var(--accent-green); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3.5rem; margin-bottom: 3.5rem; }
+        .footer-links h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 1.25rem; }
+        .footer-links ul li a { color: #94a3b8; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links ul li a:hover { color: var(--accent-green); }
+        .footer-contact li { display: flex; gap: 0.8rem; color: #94a3b8; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.5; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; }
+        @media (max-width: 1024px) { .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; } .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background: var(--white); flex-direction: column; padding-top: 2rem; transition: var(--transition); z-index: 99999; } .nav-links.active { left: 0; } .mobile-toggle { display: block; } .dropdown-menu { position: static; box-shadow: none; display: none; } .dropdown:hover .dropdown-menu { display: block; } .banner { padding: 4rem 0 2rem; } }
     </style>
 </head>
 <body>
@@ -60,35 +116,108 @@
     <div class="banner">
         <div class="container">
             <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Statutory Transparency</span>
-            <h1>Legal Status & Registration</h1>
-            <p style="color: #cbd5e1; font-size: 1.15rem;">Formal statutory documentation and institutional governance of SRMSS.</p>
+            <h1>Legal Status & Compliance</h1>
+            <p style="color: #cbd5e1; font-size: 1.15rem;">Formal statutory documentation, tax compliance, and institutional governance of SRMSS.</p>
         </div>
     </div>
 
     <section class="section-padding">
         <div class="container">
-            <div class="grid-2">
-                <div class="card">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;"><i class="fa-solid fa-file-shield" style="color: var(--accent-green);"></i> Statutory Details</h3>
-                    <ul style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 1.05rem;">
-                        <li><strong>Organization Name:</strong><br>Subha Rashmi Mahila Seva Samiti (SRMSS)</li>
-                        <li><strong>Year Established:</strong><br>2007</li>
-                        <li><strong>Founder:</strong><br>Late Jyotna Rani Jena</li>
-                        <li><strong>Registration Act:</strong><br>Registered under the Societies Registration Act, 1860</li>
-                        <li><strong>Place of Registration:</strong><br>Odisha, India</li>
-                        <li><strong>Organizational Type:</strong><br>Registered Grassroots Non-Profit Organization</li>
+            <div class="grid-2" style="margin-bottom: 4rem;">
+                <div class="card" style="border-top: 5px solid var(--primary-blue);">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;"><i class="fa-solid fa-file-shield" style="color: var(--accent-green);"></i> Foundational Details</h3>
+                    <ul class="list-compliance" style="margin-top: 0;">
+                        <li>
+                            <i class="fa-solid fa-building-ngo"></i>
+                            <div><strong>Subha Rashmi Mahila Seva Samiti (SRMSS)</strong><span>Registered Grassroots Non-Profit Organization</span></div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-landmark"></i>
+                            <div><strong>Societies Registration Act, 1860</strong><span>Registered in Odisha, India</span></div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <div><strong>Established 2007</strong><span>Founded by Late Jyotna Rani Jena</span></div>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <span class="badge">Governance & Compliance</span>
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Commitment to Transparency</h2>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Subha Rashmi Mahila Seva Samiti (SRMSS) operates as a registered grassroots non-profit organization formally established in 2007 under the Societies Registration Act, 1860, in Odisha by Late Jyotna Rani Jena.</p>
-                    <p style="color: var(--text-muted); font-size: 1.05rem;">Since its inception, the organization has maintained adherence to statutory regulations while dedicating its resources to community-driven development, natural resource conservation, and women empowerment across vulnerable rural and coastal areas of Odisha.</p>
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--emerald-light); border-radius: 12px; border-left: 5px solid var(--accent-green);">
-                        <p style="color: var(--accent-green); font-weight: 700; font-size: 1rem; margin: 0;"><i class="fa-solid fa-circle-check"></i> All programmatic partnerships and institutional activities are conducted in accordance with the rules of the Societies Registration Act, 1860.</p>
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin: 1rem 0;">Since its inception in 2007, Subha Rashmi Mahila Seva Samiti has maintained strict adherence to the statutory regulations of the Government of India.</p>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">We are fully compliant with national tax laws, registered on the NITI Aayog NGO Darpan portal, and eligible for corporate grants through our CSR-1 registration. Our dedication to financial transparency ensures that every resource is effectively deployed toward community-driven development.</p>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem;">Tax & Regulatory Registrations</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem;">Our active statutory approvals for institutional funding and tax exemptions.</p>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 5rem;">
+                <div class="card" style="border-top: 4px solid var(--accent-gold);">
+                    <h4 style="font-size: 1.25rem; margin-bottom: 1rem;"><i class="fa-solid fa-hand-holding-heart" style="color: var(--accent-gold); margin-right: 8px;"></i> Funding Eligibility</h4>
+                    <ul class="list-compliance">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>CSR Registration (CSR-1)</strong><span>Eligible for Corporate Social Responsibility funding</span></div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>NITI Aayog Darpan</strong><span>ID: [Insert NITI Aayog ID Here or leave blank]</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--accent-green);">
+                    <h4 style="font-size: 1.25rem; margin-bottom: 1rem;"><i class="fa-solid fa-file-invoice-dollar" style="color: var(--accent-green); margin-right: 8px;"></i> Tax Exemptions</h4>
+                    <ul class="list-compliance">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>Income Tax Section 12A</strong><span>Registered for Tax Exemption</span></div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>Income Tax Section 80G</strong><span>Donations are eligible for tax deductions</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--primary-blue);">
+                    <h4 style="font-size: 1.25rem; margin-bottom: 1rem;"><i class="fa-solid fa-id-card" style="color: var(--primary-blue); margin-right: 8px;"></i> Financial Identity</h4>
+                    <ul class="list-compliance">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>Permanent Account Number (PAN)</strong><span>[Insert PAN No. Here or leave as Registered]</span></div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <div><strong>Tax Deduction Account (TAN)</strong><span>[Insert TAN No. Here or leave as Registered]</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-light); border: 1px solid #e2e8f0; border-top: 6px solid var(--accent-green); text-align: center; padding: 4rem 2rem;">
+                <span class="badge" style="background: var(--white);">Public Disclosures</span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Financial Reports & Statements</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin: 0 auto 2.5rem;">As part of our commitment to institutional transparency and donor accountability, SRMSS undergoes independent annual audits. You may review our official financial and programmatic disclosures below.</p>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;">
+                    <a href="PLACEHOLDER_FINANCIALS.pdf" target="_blank" class="btn-download">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 1.2rem; color: #dc2626;"></i> Audited Financial Statements
+                    </a>
+                    
+                    <a href="PLACEHOLDER_IT_RETURNS.pdf" target="_blank" class="btn-download">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 1.2rem; color: #dc2626;"></i> Income Tax Returns
+                    </a>
+                    
+                    <a href="PLACEHOLDER_ANNUAL_REPORT.pdf" target="_blank" class="btn-download">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 1.2rem; color: #dc2626;"></i> Annual Reports
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -98,6 +227,10 @@
                 <div>
                     <span class="logo-title" style="color: white; font-size: 1.7rem;">SRMSS</span>
                     <p style="color: #94a3b8; margin-top: 1rem; font-size: 0.9rem; line-height: 1.6;">Subha Rashmi Mahila Seva Samiti (SRMSS) is a registered grassroots non-profit organization dedicated to women empowerment, coastal conservation, and participatory development.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61577730561571" target="_blank" aria-label="Facebook Page" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/srmss-non-profits-0b79b623b/" target="_blank" aria-label="LinkedIn Profile" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='var(--accent-green)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Navigation</h4>
